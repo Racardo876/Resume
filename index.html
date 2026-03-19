@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Racardo Brown - Cyber Security and Technology Professional. Experience across Microsoft 365, Azure, Intune, and security operations."
+      content="Racardo Brown - Cyber Security and Technology Professional. Executive-level leadership across Microsoft 365, Azure, security operations, and IT transformation."
     />
-    <title>Racardo Brown | Cybersecurity & Technology</title>
-
-    <meta property="og:title" content="Racardo Brown | Cybersecurity & Technology" />
-    <meta property="og:description" content="Security-focused technology leadership and hands-on systems administration." />
+    <title>Racardo Brown | Cybersecurity & Technology Leader</title>
+    <meta property="og:title" content="Racardo Brown | Cybersecurity & Technology Leader" />
+    <meta
+      property="og:description"
+      content="Modern personal portfolio and resume for security, infrastructure, and technology operations leadership."
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -24,337 +26,334 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
-      <div class="container header-inner">
-        <div class="brand">
-          <div class="avatar" aria-hidden="true">
-            <img
-              src="./assets/headshot.jpg"
-              alt="Racardo Brown"
-              class="avatar__img"
-              onload="this.parentElement.classList.add('avatar--hasimg')"
-              onerror="this.parentElement.classList.add('avatar--noimg')"
-            />
-            <div class="avatar__fallback">RB</div>
-          </div>
-          <div class="brand-text">
-            <h1 class="name">Racardo Brown</h1>
-            <p class="headline">Cybersecurity & Technology Professional</p>
-          </div>
-        </div>
+      <div class="container topbar">
+        <a href="#hero" class="brand" aria-label="Go to top">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span class="brand__name">Racardo Brown</span>
+        </a>
 
-        <nav class="nav-links" aria-label="Resume sections">
-          <a href="#summary">Summary</a>
+        <nav class="topnav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#stack">Tech Stack</a>
           <a href="#skills">Skills</a>
           <a href="#experience">Experience</a>
+          <a href="#projects">Achievements</a>
           <a href="#education">Education</a>
-          <a href="#certifications">Certifications</a>
+          <a href="#certifications">Certs</a>
+          <a href="#contact">Contact</a>
         </nav>
 
-        <div class="header-actions">
-          <a class="btn primary btn--small" href="./assets/resume.pdf" download aria-label="Download resume PDF">
-            Download PDF
-          </a>
-          <button class="btn ghost theme-toggle btn--small" type="button" id="themeToggle" aria-label="Toggle dark/light theme">
-            <span class="theme-toggle__label">Theme</span>
-            <span class="theme-toggle__icon" aria-hidden="true">◐</span>
+        <div class="topbar__actions">
+          <a class="btn btn--primary btn--small" href="./assets/resume.pdf" download>Download CV</a>
+          <button class="btn btn--ghost btn--small theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+            <span>Theme</span><span aria-hidden="true">◐</span>
           </button>
         </div>
       </div>
     </header>
 
     <main id="main" class="container">
-      <section class="hero card" aria-labelledby="heroTitle">
-        <div class="hero__grid">
-          <div class="hero__content">
-            <h2 id="heroTitle" class="hero__title">
-              Building secure Microsoft 365 and Azure environments with a zero-trust mindset.
-            </h2>
-            <p class="hero__subtitle">
-              Hands-on IT administration and security operations, covering Hyper-V, Intune MDM, RMM, and incident-response support.
-            </p>
+      <section id="hero" class="section hero card reveal">
+        <div class="hero__content">
+          <p class="eyebrow">Cybersecurity | Cloud | IT Leadership</p>
+          <h1 class="hero__title">Executive-level technology leadership with hands-on implementation depth.</h1>
+          <p class="hero__subtitle">
+            I design and lead secure, scalable environments across Microsoft 365, Azure, endpoint management, and security operations - translating technical
+            decisions into business impact.
+          </p>
 
-            <div class="hero__badges" role="list" aria-label="Quick highlights">
-              <span class="chip" role="listitem">Microsoft 365</span>
-              <span class="chip" role="listitem">Azure</span>
-              <span class="chip" role="listitem">Intune (MDM)</span>
-              <span class="chip" role="listitem">Security & Compliance</span>
-              <span class="chip" role="listitem">Zero Trust</span>
-            </div>
-
-            <div class="hero__cta">
-              <a class="btn primary" href="./assets/resume.pdf" download aria-label="Download resume PDF">
-                Download PDF
-              </a>
-              <a
-                class="btn ghost"
-                href="https://www.linkedin.com/in/racardob/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open LinkedIn profile"
-              >
-                LinkedIn
-              </a>
-            </div>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="./assets/resume.pdf" target="_blank" rel="noreferrer">View Resume</a>
+            <a class="btn btn--ghost" href="#contact">Contact Me</a>
+            <a class="btn btn--ghost" href="./assets/resume.pdf" download>Download CV</a>
           </div>
+
+          <ul class="hero__meta">
+            <li><strong>Location:</strong> Delray Beach, Florida</li>
+            <li><strong>Email:</strong> <a href="mailto:racardobrown@gmail.com">racardobrown@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+15696975006">561.699.5006</a></li>
+          </ul>
+        </div>
+        <div class="hero__photo-wrap">
+          <img src="./assets/headshot.png" alt="Portrait of Racardo Brown" class="hero__photo" />
+          <span class="photo-glow" aria-hidden="true"></span>
         </div>
       </section>
 
-      <section class="card contact hero-contact card--compact" aria-labelledby="contactHeading">
-        <h2 id="contactHeading" class="sr-only">Contact</h2>
-        <ul class="contact-list">
-          <li>
-            <strong>Phone:</strong>
-            <a href="tel:+15696975006">561.699.5006</a>
-          </li>
-          <li>
-            <strong>Email:</strong>
-            <a href="mailto:racardobrown@gmail.com">racardobrown@gmail.com</a>
-          </li>
-          <li>
-            <strong>LinkedIn:</strong>
-            <a href="https://www.linkedin.com/in/racardob/" target="_blank" rel="noreferrer">linkedin.com/in/racardob/</a>
-          </li>
-          <li>
-            <strong>Location:</strong>
-            <span>Delray Beach, Florida, 33484</span>
-          </li>
-        </ul>
-      </section>
-
-      <section class="grid">
-        <article class="card" aria-labelledby="summary">
-          <h2 id="summary" class="section-title">Professional Summary</h2>
+      <section id="about" class="section grid-2 reveal">
+        <article class="card">
+          <h2 class="section-title">About Me</h2>
           <p>
-            Demonstrated capacity to seamlessly blend visionary thinking, creative problem-solving, and robust business insight with honed technological expertise,
-            exemplary leadership, and project management competencies.
+            Seasoned Cyber Security and Technology Professional with over a decade of hands-on experience spanning security operations, networking, identity,
+            cloud architecture, and end-user systems.
           </p>
           <p class="muted">
-            Areas of Expertise Encompass Microsoft products, security operations, and networking administration - built for secure, scalable environments.
+            I combine strategy and execution: from executive budget planning and governance to technical implementation of MDM, DLP, SSO, cloud migration, and
+            operational automation.
           </p>
         </article>
 
-        <article class="card" aria-labelledby="skills">
-          <h2 id="skills" class="section-title">Areas of Expertise</h2>
-          <div class="chip-grid" role="list" aria-label="Core expertise">
-            <div class="chip" role="listitem">Microsoft 365</div>
-            <div class="chip" role="listitem">Azure</div>
-            <div class="chip" role="listitem">SharePoint</div>
-            <div class="chip" role="listitem">Intune (MDM)</div>
-            <div class="chip" role="listitem">Power Automate</div>
-            <div class="chip" role="listitem">Exchange</div>
-            <div class="chip" role="listitem">Teams</div>
-
-            <div class="chip" role="listitem">Sentinel One</div>
-            <div class="chip" role="listitem">Arctic Wolf</div>
-            <div class="chip" role="listitem">Atera RMM</div>
-            <div class="chip" role="listitem">PDQ</div>
-            <div class="chip" role="listitem">AD Audit Plus</div>
-            <div class="chip" role="listitem">Microsoft Security &amp; Compliance</div>
-
-            <div class="chip" role="listitem">Meraki</div>
-            <div class="chip" role="listitem">UniFi</div>
-            <div class="chip" role="listitem">Active Directory</div>
-            <div class="chip" role="listitem">Zero Trust</div>
-            <div class="chip" role="listitem">Print Servers</div>
-            <div class="chip" role="listitem">Project Management</div>
-            <div class="chip" role="listitem">PowerShell</div>
-          </div>
+        <article class="card">
+          <h2 class="section-title">What I Do Best</h2>
+          <ul class="feature-list">
+            <li>Lead secure cloud and Microsoft ecosystem modernization initiatives.</li>
+            <li>Build resilient IT operations that reduce risk while improving speed.</li>
+            <li>Translate business priorities into measurable technical outcomes.</li>
+            <li>Drive cross-functional teams through complex systems transformation.</li>
+          </ul>
         </article>
       </section>
 
-      <section class="card" aria-labelledby="experience">
-        <h2 id="experience" class="section-title">Professional Experience</h2>
+      <section class="section metrics reveal" aria-label="impact metrics">
+        <article class="metric-card">
+          <p class="metric-value">82%</p>
+          <p class="metric-label">Asset loss reduction from improved IT asset management</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-value">49%</p>
+          <p class="metric-label">Security incident reduction through policy enforcement and auditing</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-value">60%</p>
+          <p class="metric-label">Faster EMR client onboarding via terminal server implementation</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-value">40%</p>
+          <p class="metric-label">Budget decrease through weekly cost optimization initiatives</p>
+        </article>
+      </section>
 
+      <section id="stack" class="section card reveal">
+        <h2 class="section-title">Technology Stack / Tools</h2>
+        <div class="stack-grid">
+          <article class="stack-card">
+            <h3>Cybersecurity</h3>
+            <div class="logo-grid">
+              <span class="logo-pill"><span class="logo-icon">S1</span>Sentinel One</span>
+              <span class="logo-pill"><span class="logo-icon">AW</span>Arctic Wolf</span>
+              <span class="logo-pill"><span class="logo-icon">MS</span>MS Security</span>
+              <span class="logo-pill"><span class="logo-icon">DLP</span>DLP</span>
+              <span class="logo-pill"><span class="logo-icon">ZT</span>Zero Trust</span>
+            </div>
+          </article>
+
+          <article class="stack-card">
+            <h3>Cloud / Infrastructure</h3>
+            <div class="logo-grid">
+              <span class="logo-pill"><span class="logo-icon">AZ</span>Azure</span>
+              <span class="logo-pill"><span class="logo-icon">M365</span>Microsoft 365</span>
+              <span class="logo-pill"><span class="logo-icon">HV</span>Hyper-V</span>
+              <span class="logo-pill"><span class="logo-icon">EX</span>Exchange</span>
+              <span class="logo-pill"><span class="logo-icon">SP</span>SharePoint</span>
+            </div>
+          </article>
+
+          <article class="stack-card">
+            <h3>Systems / Operations</h3>
+            <div class="logo-grid">
+              <span class="logo-pill"><span class="logo-icon">AD</span>Active Directory</span>
+              <span class="logo-pill"><span class="logo-icon">IN</span>Intune</span>
+              <span class="logo-pill"><span class="logo-icon">SSO</span>Single Sign-On</span>
+              <span class="logo-pill"><span class="logo-icon">AT</span>Atera RMM</span>
+              <span class="logo-pill"><span class="logo-icon">PDQ</span>PDQ</span>
+            </div>
+          </article>
+
+          <article class="stack-card">
+            <h3>Automation / Development</h3>
+            <div class="logo-grid">
+              <span class="logo-pill"><span class="logo-icon">PA</span>Power Automate</span>
+              <span class="logo-pill"><span class="logo-icon">PS</span>PowerShell</span>
+              <span class="logo-pill"><span class="logo-icon">JS</span>JavaScript</span>
+              <span class="logo-pill"><span class="logo-icon">WP</span>WordPress</span>
+              <span class="logo-pill"><span class="logo-icon">GH</span>GitHub</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section card reveal">
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="skill-groups">
+          <article class="skill-group">
+            <h3>Leadership & Strategy</h3>
+            <div class="chips">
+              <span class="chip">IT Budget Management</span>
+              <span class="chip">Team Leadership</span>
+              <span class="chip">Project Management</span>
+              <span class="chip">Process Improvement</span>
+            </div>
+          </article>
+          <article class="skill-group">
+            <h3>Security & Compliance</h3>
+            <div class="chips">
+              <span class="chip">Incident Response</span>
+              <span class="chip">Security Auditing</span>
+              <span class="chip">NIST / COBIT</span>
+              <span class="chip">GDPR / HIPAA / PCI-DSS</span>
+            </div>
+          </article>
+          <article class="skill-group">
+            <h3>Cloud & Systems</h3>
+            <div class="chips">
+              <span class="chip">Cloud Migration</span>
+              <span class="chip">Azure Hybrid Join</span>
+              <span class="chip">Identity & Access</span>
+              <span class="chip">Endpoint Management</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section card reveal">
+        <h2 class="section-title">Professional Experience</h2>
         <div class="timeline">
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">C.I.S.M</h3>
-              <p class="role-meta">
-                All American Shutter &amp; Glass | Rivera Beach, FL (Hybrid)
-                <span class="dot">•</span>
-                October 2023 to Present
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Administered Hyper-V and implemented Microsoft 365 / SharePoint for secure operations.</li>
-              <li>Configured IT asset management to reduce asset loss by 82%.</li>
-              <li>Implemented DLP and MDM/RMM solutions using Verizon MDM, Intune, ABM, and Knox.</li>
-              <li>Managed IT budget with CFO oversight; optimized costs and resource allocation.</li>
-              <li>Deployed and configured Single Sign-On (SSO) for streamlined authentication.</li>
-              <li>Configured Azure Hybrid Join to integrate hybrid Azure AD environments.</li>
-              <li>Migrated from on-prem dependency to 100% cloud dependency.</li>
-              <li>Managed security policies using Microsoft 365 administrative tools.</li>
-              <li>Deployed Atera RMM for automated patch management.</li>
-              <li>Reduced security incidents by 49% through enforcement of data security and auditing policies.</li>
+          <article class="timeline-card">
+            <div class="timeline-head">
+              <h3>C.I.S.M</h3>
+              <p>All American Shutter &amp; Glass | Oct 2023 - Present</p>
+            </div>
+            <ul>
+              <li>Migrated operations from on-prem dependency to 100% cloud dependency.</li>
+              <li>Reduced asset loss by 82% with improved IT asset management design.</li>
+              <li>Implemented SSO, DLP, MDM, and RMM across business-critical systems.</li>
+              <li>Reduced security incidents by 49% through stronger controls and audits.</li>
             </ul>
           </article>
 
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">IT Manager</h3>
-              <p class="role-meta">
-                Palm Beach Accountable Care Organization | Palm Beach County, FL (On-Site)
-                <span class="dot">•</span>
-                April 2023 to October 2023
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Administered Hyper-V, Azure, Microsoft 365, Exchange, and Intune.</li>
-              <li>Implemented and managed IT asset management; reduced asset loss from 60% to 37.3%.</li>
-              <li>Led complete migration from on-prem dependency to cloud / O365.</li>
-              <li>Streamlined onboarding/offboarding: reduced setup time from 3-4 days to 1-1.7 minutes per user using SharePoint and Power Automate.</li>
-              <li>Implemented DLP, MDM, and RMM solutions via Microsoft Intune.</li>
-              <li>Configured terminal server to reduce new client EMR onboarding time by 60%.</li>
-              <li>Achieved a 40% budget decrease through weekly savings initiatives.</li>
-              <li>Led project managers and infrastructure engineers in supervisory capacity.</li>
+          <article class="timeline-card">
+            <div class="timeline-head">
+              <h3>IT Manager</h3>
+              <p>Palm Beach Accountable Care Organization | Apr 2023 - Oct 2023</p>
+            </div>
+            <ul>
+              <li>Led cloud and Microsoft 365 transition from legacy on-prem workflows.</li>
+              <li>Reduced user setup time from days to minutes with Power Automate workflows.</li>
+              <li>Achieved a 40% budget decrease while maintaining operational stability.</li>
+              <li>Supervised project managers and infrastructure engineers.</li>
             </ul>
           </article>
 
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">Cybersecurity Analyst</h3>
-              <p class="role-meta">
-                NationsBenefits | Plantation, FL (On-Site)
-                <span class="dot">•</span>
-                December 2022 to April 2023
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Performed threat detection and incident response within security operations.</li>
-              <li>Supported compliance and auditing aligned to GDPR, HIPAA, PCI-DSS, NIST, and COBIT.</li>
-              <li>Utilized Sentinel One, Absolute, Arctic Wolf, ServiceNow, TMpros, and AD Audit Plus.</li>
-              <li>Applied a zero-trust approach to network security.</li>
-            </ul>
-          </article>
-
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">Lead IT Support Specialist</h3>
-              <p class="role-meta">
-                NationsBenefits | Plantation, FL (On-Site)
-                <span class="dot">•</span>
-                May 2022 to December 2022
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Supported Microsoft 365 and Microsoft Server (2019) with Active Directory administration.</li>
-              <li>Managed Azure AD and Intune (including endpoint and device policies).</li>
-              <li>Administered Citrix VDI and Workspace environments.</li>
-              <li>Managed printer and file server operations.</li>
-              <li>Provided remote support using TMpros.</li>
-              <li>Administered asset management via ServiceNow.</li>
-              <li>Handled ticketing workflows in Zendesk and ServiceNow.</li>
-            </ul>
-          </article>
-
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">Fiber Optic Technician</h3>
-              <p class="role-meta">
-                AT&amp;T | Delray Beach, FL (On-Site)
-                <span class="dot">•</span>
-                December 2020 to May 2022
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Installed, repaired, and maintained fiber optic systems for optimal functionality.</li>
-              <li>Installed network cabling using crimpers and strippers.</li>
-              <li>Installed telephone systems including voicemail and intercom systems.</li>
-              <li>Worked with networking protocols including IPv4, IPv6, and TCP/UDP.</li>
-              <li>Performed fiber optic techniques including mechanical splicing, fusion splicing, fiber scoping, and fiber provisioning.</li>
-            </ul>
-          </article>
-
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">Jr. Developer</h3>
-              <p class="role-meta">
-                Xr studios / ByllKreate | Kingston, Jamaica (Remote)
-                <span class="dot">•</span>
-                November 2017 to December 2021
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Created animated banner advertisements using CSS, HTML, and JavaScript with GreenSock.</li>
-              <li>Developed WordPress websites and custom plugins / API development.</li>
-              <li>Performed graphic design using Adobe Photoshop and Illustrator.</li>
-              <li>Designed databases and web applications with SQL and Oracle.</li>
-              <li>Optimized websites for SEO and social media performance.</li>
-              <li>Used GitHub for version control.</li>
-            </ul>
-          </article>
-
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">Technical Support Manager</h3>
-              <p class="role-meta">
-                ACCENT Marketing | Kingston, Jamaica (On-Site)
-                <span class="dot">•</span>
-                August 2013 to October 2017
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Led a technical support team of 12, promoting collaboration and motivation.</li>
-              <li>Managed and tracked support tickets to ensure timely resolution.</li>
-              <li>Analyzed KPI metrics to identify improvement opportunities.</li>
-              <li>Developed and maintained knowledge bases and support documentation.</li>
-              <li>Served as an escalation point for complex technical issues.</li>
-              <li>Implemented customer feedback mechanisms to improve service quality.</li>
-              <li>Conducted regular team meetings to strengthen coordination and performance.</li>
+          <article class="timeline-card">
+            <div class="timeline-head">
+              <h3>Cybersecurity Analyst / Lead IT Support Specialist</h3>
+              <p>NationsBenefits | May 2022 - Apr 2023</p>
+            </div>
+            <ul>
+              <li>Executed incident response, compliance support, and endpoint security improvements.</li>
+              <li>Managed Active Directory, Azure AD, Intune, and Citrix environments.</li>
+              <li>Improved support workflows across ServiceNow and Zendesk.</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section class="grid">
-        <article class="card" aria-labelledby="education">
-          <h2 id="education" class="section-title">Education</h2>
-          <div class="list-block">
-            <div class="list-item">
-              <h3 class="list-item__title">Master of Science in Cyber Security Management</h3>
-              <p class="list-item__meta">Nova Southeastern University | Fort Lauderdale, FL</p>
-              <p class="list-item__years">August 2023 to August 2024</p>
-            </div>
-            <div class="list-item">
-              <h3 class="list-item__title">Certificate in Project Management</h3>
-              <p class="list-item__meta">Florida International University | Fort Lauderdale, FL</p>
-              <p class="list-item__years">January 2023 to April 2023</p>
-            </div>
-            <div class="list-item">
-              <h3 class="list-item__title">Bachelor of Science in Information &amp; Communication Technology</h3>
-              <p class="list-item__meta">Vocational Training Development Institute | Kingston</p>
-              <p class="list-item__years">August 2020 to January 2023</p>
-            </div>
-            <div class="list-item">
-              <h3 class="list-item__title">Associate of Science in Information and Communication Technology</h3>
-              <p class="list-item__meta">Vocational Training Development Institute | Kingston</p>
-              <p class="list-item__years">September 2010 to August 2012</p>
-            </div>
+      <section id="projects" class="section card reveal">
+        <h2 class="section-title">Projects / Achievements</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>Enterprise Cloud Migration Program</h3>
+            <p>Transitioned business operations from on-prem systems to cloud-first Microsoft ecosystem.</p>
+            <p class="tagline">Outcome: improved reliability, security posture, and operational agility.</p>
+          </article>
+          <article class="project-card">
+            <h3>Identity & Access Modernization</h3>
+            <p>Implemented SSO and Azure Hybrid Join to unify authentication and strengthen access control.</p>
+            <p class="tagline">Outcome: cleaner user experience and reduced identity risk.</p>
+          </article>
+          <article class="project-card">
+            <h3>Security Policy & Auditing Program</h3>
+            <p>Established policy governance and auditing workflows using Microsoft security tooling.</p>
+            <p class="tagline">Outcome: 49% reduction in security incidents.</p>
+          </article>
+          <article class="project-card">
+            <h3>Onboarding Automation Initiative</h3>
+            <p>Automated onboarding/offboarding with SharePoint and Power Automate.</p>
+            <p class="tagline">Outcome: setup time reduced from days to minutes per user.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section grid-2">
+        <article id="education" class="card reveal">
+          <h2 class="section-title">Education</h2>
+          <div class="credential-grid">
+            <article class="credential credential--featured">
+              <p class="credential__label">Masters Degree</p>
+              <h3>Master of Science in Cyber Security Management</h3>
+              <p>Nova Southeastern University</p>
+              <p class="muted">2023 - 2024</p>
+            </article>
+            <article class="credential">
+              <p class="credential__label">Certificate</p>
+              <h3>Project Management</h3>
+              <p>Florida International University</p>
+              <p class="muted">2023</p>
+            </article>
+            <article class="credential">
+              <p class="credential__label">Bachelors Degree</p>
+              <h3>Information &amp; Communication Technology</h3>
+              <p>Vocational Training Development Institute</p>
+              <p class="muted">2020 - 2023</p>
+            </article>
+            <article class="credential">
+              <p class="credential__label">Associates Degree</p>
+              <h3>Information &amp; Communication Technology</h3>
+              <p>Vocational Training Development Institute</p>
+              <p class="muted">2010 - 2012</p>
+            </article>
           </div>
         </article>
 
-        <article class="card" aria-labelledby="certifications">
-          <h2 id="certifications" class="section-title">Certifications</h2>
-          <ul class="bullet-list">
-            <li>CCNA: Enterprise Networking, Security, and Automation (May 2022)</li>
-            <li>CCNA: Switching, Routing, and Wireless Essentials (January 2022)</li>
-            <li>TestOut Security Pro (February 2024)</li>
-          </ul>
-          <p class="muted" style="margin-top: 0.75rem;">
-            Note: "CISM" appears in your role title; if it should be listed as a certification instead, tell me and I will move it accordingly.
-          </p>
+        <article id="certifications" class="card reveal">
+          <h2 class="section-title">Certifications</h2>
+          <div class="badge-grid">
+            <article class="badge-card">
+              <p class="badge-card__title">CCNA Enterprise Networking, Security, and Automation</p>
+              <p class="badge-card__meta">Cisco | 2022</p>
+            </article>
+            <article class="badge-card">
+              <p class="badge-card__title">CCNA Switching, Routing, and Wireless Essentials</p>
+              <p class="badge-card__meta">Cisco | 2022</p>
+            </article>
+            <article class="badge-card">
+              <p class="badge-card__title">TestOut Security Pro</p>
+              <p class="badge-card__meta">TestOut | 2024</p>
+            </article>
+          </div>
         </article>
       </section>
 
-      <section class="card print-footer" aria-labelledby="about">
-        <h2 id="about" class="section-title">Availability</h2>
-        <p class="muted">
-          Open to security and systems leadership roles. Lets connect and build resilient environments.
-        </p>
+      <section id="contact" class="section card reveal">
+        <h2 class="section-title">Contact</h2>
+        <p class="muted">Open to cybersecurity, infrastructure, and technology operations leadership opportunities.</p>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:racardobrown@gmail.com">
+            <p class="contact-card__label">Email</p>
+            <p>racardobrown@gmail.com</p>
+          </a>
+          <a class="contact-card" href="tel:+15696975006">
+            <p class="contact-card__label">Phone</p>
+            <p>561.699.5006</p>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/racardob/" target="_blank" rel="noreferrer">
+            <p class="contact-card__label">LinkedIn</p>
+            <p>linkedin.com/in/racardob</p>
+          </a>
+          <a class="contact-card" href="./assets/resume.pdf" download>
+            <p class="contact-card__label">Resume</p>
+            <p>Download PDF</p>
+          </a>
+        </div>
       </section>
+
+      <footer class="footer">
+        <p>Racardo Brown - Cybersecurity &amp; Technology Professional</p>
+      </footer>
     </main>
 
     <script src="./js/theme-toggle.js" defer></script>
+    <script src="./js/main.js" defer></script>
   </body>
 </html>
 
