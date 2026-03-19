@@ -7,7 +7,8 @@
   function getPreferredTheme() {
     const stored = localStorage.getItem(storageKey);
     if (stored === "light" || stored === "dark") return stored;
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    // Default to dark for a premium look; user choice is persisted afterwards.
+    return "dark";
   }
 
   function applyTheme(theme) {
