@@ -25,11 +25,13 @@ body {
 
 .mcard-hero {
   position: relative;
-  height: 220px;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(147, 197, 253, 0.55), transparent 35%),
-    radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.45), transparent 35%),
-    linear-gradient(180deg, #4f6dda 0%, #6f8cf0 100%);
+  height: 250px;
+  background-image:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.48) 0%, rgba(15, 23, 42, 0.28) 100%),
+    url("/banner-cyber.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .mcard-hero-overlay {
@@ -55,9 +57,9 @@ body {
 }
 
 .mcard-plus-btn {
-  position: relative;
-  top: -28px;
-  margin-left: 140px;
+  position: absolute;
+  right: -2px;
+  bottom: 8px;
   display: inline-flex;
   height: 40px;
   width: 40px;
@@ -70,10 +72,50 @@ body {
   font-size: 20px;
 }
 
+.mcard-intro {
+  border-radius: 16px;
+  padding: 0 8px 8px;
+}
+
+.mcard-avatar-wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 136px;
+  height: 136px;
+}
+
+.mcard-avatar {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border: 7px solid #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
+}
+
+.mcard-intro-badges {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mcard-intro-badges span {
+  border: 1px solid #d6deff;
+  background: #eef2ff;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: #3656c7;
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .mcard-social {
   display: inline-flex;
-  height: 34px;
-  width: 34px;
+  height: 38px;
+  width: 38px;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
@@ -82,6 +124,12 @@ body {
   font-size: 11px;
   font-weight: 700;
   box-shadow: 0 6px 12px rgba(49, 93, 245, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mcard-social:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 16px rgba(49, 93, 245, 0.35);
 }
 
 .mcard-panel {
@@ -89,6 +137,12 @@ body {
   background: #fff;
   padding: 24px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.mcard-about-panel {
+  border-color: #d8dce8;
+  border-radius: 10px;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
 }
 
 .mcard-section-title {
@@ -149,6 +203,45 @@ body {
   box-shadow: 0 10px 20px rgba(49, 93, 245, 0.35);
 }
 
+.mcard-icon-badge svg {
+  height: 24px;
+  width: 24px;
+}
+
+.mcard-service-card {
+  text-align: center;
+}
+
+.mcard-service-card .mcard-subtitle {
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.mcard-service-card p {
+  text-align: left;
+}
+
+.mcard-section-node {
+  position: relative;
+  margin: 16px auto 0;
+  width: fit-content;
+}
+
+.mcard-section-node .mcard-icon-badge {
+  margin: 0 auto;
+}
+
+.mcard-section-node::after {
+  content: none;
+}
+
+.mcard-scroll-wrap-tight {
+  margin-top: 0;
+  padding-right: 0;
+  scrollbar-gutter: stable both-edges;
+}
+
 .mcard-progress {
   height: 8px;
   width: 100%;
@@ -167,15 +260,76 @@ body {
   gap: 24px;
 }
 
+.mcard-scroll-wrap {
+  max-height: 760px;
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #e5e7eb;
+}
+
+.mcard-scroll-wrap-sm {
+  max-height: 540px;
+}
+
+.mcard-scroll-wrap-md {
+  max-height: 700px;
+}
+
+.mcard-scroll-wrap::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mcard-scroll-wrap::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+
+.mcard-scroll-wrap::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
 @media (min-width: 768px) {
   .mcard-timeline-center::before {
     content: "";
     position: absolute;
-    left: 50%;
+    left: calc(50% - 1px);
     top: 0;
     bottom: 0;
     width: 2px;
     background: #315df5;
+  }
+
+  .mcard-timeline-center.mcard-timeline-with-node::before {
+    top: -24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .mcard-hero {
+    height: 220px;
+  }
+
+  .mcard-avatar-wrap {
+    width: 116px;
+    height: 116px;
+  }
+
+  .mcard-plus-btn {
+    right: -6px;
+    bottom: 4px;
+    height: 36px;
+    width: 36px;
+  }
+
+  .mcard-scroll-wrap {
+    max-height: 620px;
+  }
+
+  .mcard-scroll-wrap-sm,
+  .mcard-scroll-wrap-md {
+    max-height: 500px;
   }
 }
 
@@ -188,6 +342,18 @@ body {
   background: #fff;
   padding: 16px;
   text-align: left;
+}
+
+.mcard-timeline-clickable {
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.mcard-timeline-clickable:hover {
+  transform: translateY(-2px);
+  border-color: #bcd0ff;
+  box-shadow: 0 8px 18px rgba(49, 93, 245, 0.14);
 }
 
 .mcard-date-badge {
@@ -228,11 +394,12 @@ body {
   .mcard-timeline-row::before {
     content: "";
     position: absolute;
-    left: calc(50% - 5px);
+    left: calc(50% - 6px);
     top: 50%;
-    height: 10px;
-    width: 10px;
+    height: 12px;
+    width: 12px;
     transform: translateY(-50%);
+    box-sizing: border-box;
     border: 2px solid #fff;
     border-radius: 999px;
     background: #315df5;
@@ -282,4 +449,77 @@ body {
 
 .mcard-testimonial-slide {
   animation: testimonialFadeIn 320ms ease;
+}
+
+.mcard-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.45);
+  padding: 20px;
+}
+
+.mcard-modal-panel {
+  position: relative;
+  width: min(640px, 100%);
+  max-height: min(88vh, 920px);
+  overflow-y: auto;
+  border: 1px solid #d7e1ff;
+  background: #fff;
+  box-shadow: 0 22px 44px rgba(15, 23, 42, 0.26);
+  border-radius: 12px;
+  padding: 24px;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #e5e7eb;
+}
+
+.mcard-modal-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mcard-modal-panel::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+
+.mcard-modal-panel::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
+.mcard-modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 32px;
+  width: 32px;
+  border: none;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.mcard-modal-preview {
+  position: relative;
+  margin-top: 20px;
+  height: 230px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  text-align: left;
+  transition: height 0.25s ease;
+  cursor: zoom-in;
+}
+
+.mcard-modal-preview.expanded {
+  height: min(72vh, 820px);
+  cursor: zoom-out;
 }
