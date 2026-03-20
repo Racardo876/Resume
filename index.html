@@ -1,359 +1,261 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Racardo Brown - Cyber Security and Technology Professional. Executive-level leadership across Microsoft 365, Azure, security operations, and IT transformation."
+      content="Racardo Brown - Cybersecurity and Technology Professional. Executive-level leadership across Microsoft 365, Azure, security operations, and IT transformation."
     />
     <title>Racardo Brown | Cybersecurity & Technology Leader</title>
-    <meta property="og:title" content="Racardo Brown | Cybersecurity & Technology Leader" />
-    <meta
-      property="og:description"
-      content="Modern personal portfolio and resume for security, infrastructure, and technology operations leadership."
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      tailwind = { config: { darkMode: "class" } };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes scroll-tech {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-scroll-tech {
+        animation: scroll-tech 30s linear infinite;
+      }
+    </style>
   </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header">
-      <div class="container topbar">
-        <a href="#hero" class="brand" aria-label="Go to top">
-          <span class="brand__dot" aria-hidden="true"></span>
-          <span class="brand__name">Racardo Brown</span>
+  <body class="bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+    <div class="hidden lg:flex fixed left-12 bottom-0 z-40 flex-col items-center gap-6">
+      <div class="flex flex-col gap-6">
+        <a
+          href="mailto:racardobrown@gmail.com"
+          class="text-slate-400 hover:text-blue-600 hover:-translate-y-1 transition-all duration-300"
+          aria-label="Email"
+        >
+          <span class="text-lg">@</span>
         </a>
-
-        <nav class="topnav" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#stack">Tech Stack</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Achievements</a>
-          <a href="#education">Education</a>
-          <a href="#certifications">Certs</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="topbar__actions">
-          <a class="btn btn--primary btn--small" href="./assets/resume.pdf" download>Download CV</a>
-          <button class="btn btn--ghost btn--small theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
-            <span>Theme</span><span aria-hidden="true">◐</span>
-          </button>
-        </div>
+        <a
+          href="https://www.linkedin.com/in/racardob/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 hover:text-blue-600 hover:-translate-y-1 transition-all duration-300"
+          aria-label="LinkedIn"
+        >
+          <span class="text-lg">in</span>
+        </a>
       </div>
-    </header>
+      <div class="w-px h-24 bg-slate-300 dark:bg-slate-700 mt-2"></div>
+    </div>
 
-    <main id="main" class="container">
-      <section id="hero" class="section hero card reveal">
-        <div class="hero__content">
-          <p class="eyebrow">Cybersecurity | Cloud | IT Leadership</p>
-          <h1 class="hero__title">Executive-level technology leadership with hands-on implementation depth.</h1>
-          <p class="hero__subtitle">
-            I design and lead secure, scalable environments across Microsoft 365, Azure, endpoint management, and security operations - translating technical
-            decisions into business impact.
-          </p>
-
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="./assets/resume.pdf" target="_blank" rel="noreferrer">View Resume</a>
-            <a class="btn btn--ghost" href="#contact">Contact Me</a>
-            <a class="btn btn--ghost" href="./assets/resume.pdf" download>Download CV</a>
+    <div class="min-h-screen">
+      <nav class="fixed w-full z-50 transition-all duration-300 bg-slate-50/90 dark:bg-slate-950/90 backdrop-blur-md py-5 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center">
+              <span class="h-8 w-8 rounded-md bg-slate-900 text-white dark:bg-white dark:text-slate-900 inline-flex items-center justify-center font-bold"
+                >&lt;/&gt;</span
+              >
+              <span class="ml-2 text-xl font-bold tracking-tight">Racardo <span class="text-blue-600">Brown</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+              <a href="#services" class="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors">Services</a>
+              <a href="#experience" class="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors">Experience</a>
+              <a href="#contact" class="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors">Contact</a>
+              <button
+                id="themeToggle"
+                class="border border-slate-300 dark:border-slate-700 px-3 py-1.5 rounded-md text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                type="button"
+                aria-label="Switch to dark mode"
+              >
+                Dark mode
+              </button>
+            </div>
           </div>
-
-          <ul class="hero__meta">
-            <li><strong>Location:</strong> Delray Beach, Florida</li>
-            <li><strong>Email:</strong> <a href="mailto:racardobrown@gmail.com">racardobrown@gmail.com</a></li>
-            <li><strong>Phone:</strong> <a href="tel:+15696975006">561.699.5006</a></li>
-          </ul>
         </div>
-        <div class="hero__photo-wrap">
-          <img src="./assets/headshot.png" alt="Portrait of Racardo Brown" class="hero__photo" />
-          <span class="photo-glow" aria-hidden="true"></span>
-        </div>
-      </section>
+      </nav>
 
-      <section id="about" class="section grid-2 reveal">
-        <article class="card">
-          <h2 class="section-title">About Me</h2>
-          <p>
-            Seasoned Cyber Security and Technology Professional with over a decade of hands-on experience spanning security operations, networking, identity,
-            cloud architecture, and end-user systems.
-          </p>
-          <p class="muted">
-            I combine strategy and execution: from executive budget planning and governance to technical implementation of MDM, DLP, SSO, cloud migration, and
-            operational automation.
-          </p>
-        </article>
-
-        <article class="card">
-          <h2 class="section-title">What I Do Best</h2>
-          <ul class="feature-list">
-            <li>Lead secure cloud and Microsoft ecosystem modernization initiatives.</li>
-            <li>Build resilient IT operations that reduce risk while improving speed.</li>
-            <li>Translate business priorities into measurable technical outcomes.</li>
-            <li>Drive cross-functional teams through complex systems transformation.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="section metrics reveal" aria-label="impact metrics">
-        <article class="metric-card">
-          <p class="metric-value">82%</p>
-          <p class="metric-label">Asset loss reduction from improved IT asset management</p>
-        </article>
-        <article class="metric-card">
-          <p class="metric-value">49%</p>
-          <p class="metric-label">Security incident reduction through policy enforcement and auditing</p>
-        </article>
-        <article class="metric-card">
-          <p class="metric-value">60%</p>
-          <p class="metric-label">Faster EMR client onboarding via terminal server implementation</p>
-        </article>
-        <article class="metric-card">
-          <p class="metric-value">40%</p>
-          <p class="metric-label">Budget decrease through weekly cost optimization initiatives</p>
-        </article>
-      </section>
-
-      <section id="stack" class="section card reveal">
-        <h2 class="section-title">Technology Stack / Tools</h2>
-        <div class="stack-grid">
-          <article class="stack-card">
-            <h3>Cybersecurity</h3>
-            <div class="logo-grid">
-              <span class="logo-pill"><span class="logo-icon">S1</span>Sentinel One</span>
-              <span class="logo-pill"><span class="logo-icon">AW</span>Arctic Wolf</span>
-              <span class="logo-pill"><span class="logo-icon">MS</span>MS Security</span>
-              <span class="logo-pill"><span class="logo-icon">DLP</span>DLP</span>
-              <span class="logo-pill"><span class="logo-icon">ZT</span>Zero Trust</span>
+      <main>
+        <section id="home" class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+              <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-7 lg:text-left">
+                <div class="inline-flex items-center px-3 py-1 rounded-full border border-blue-100 bg-blue-50 text-blue-600 text-sm font-medium mb-6 dark:border-blue-900 dark:bg-blue-950 dark:text-blue-300">
+                  <span class="flex h-2 w-2 rounded-full bg-blue-600 mr-2"></span>Open to leadership opportunities
+                </div>
+                <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+                  <span class="block">Secure Systems.</span><span class="block text-blue-600">Business-Ready Outcomes.</span>
+                </h1>
+                <p class="mt-6 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                  I help companies modernize infrastructure, harden security posture, and streamline operations across Microsoft 365, Azure, identity, and endpoint ecosystems.
+                </p>
+                <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="#contact"
+                      class="inline-flex items-center justify-center px-8 py-3 border border-slate-300 dark:border-slate-700 text-base font-medium rounded-md text-slate-700 dark:text-slate-100 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 md:text-lg transition-colors"
+                      >Contact Me</a
+                    >
+                  </div>
+                </div>
+                <div class="mt-8 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
+                  <div class="flex items-center">Cloud Transformation</div>
+                  <div class="flex items-center">Security Operations</div>
+                  <div class="flex items-center">IT Leadership</div>
+                </div>
+              </div>
+              <div class="mt-16 lg:mt-0 lg:col-span-5 relative">
+                <div class="relative mx-auto w-full rounded-lg shadow-lg max-w-md">
+                  <div class="relative block w-full bg-white dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700">
+                    <div class="w-full h-80 bg-gradient-to-br from-blue-600 via-indigo-600 to-slate-900"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                      <p class="font-bold text-xl">Racardo Brown</p>
+                      <p class="text-sm opacity-90">Cybersecurity & Technology Professional</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute -top-4 -right-4 h-24 w-24 bg-blue-100 dark:bg-blue-900 rounded-full -z-10 blur-2xl opacity-50"></div>
+                <div class="absolute -bottom-4 -left-4 h-32 w-32 bg-indigo-100 dark:bg-indigo-900 rounded-full -z-10 blur-2xl opacity-50"></div>
+              </div>
             </div>
-          </article>
-
-          <article class="stack-card">
-            <h3>Cloud / Infrastructure</h3>
-            <div class="logo-grid">
-              <span class="logo-pill"><span class="logo-icon">AZ</span>Azure</span>
-              <span class="logo-pill"><span class="logo-icon">M365</span>Microsoft 365</span>
-              <span class="logo-pill"><span class="logo-icon">HV</span>Hyper-V</span>
-              <span class="logo-pill"><span class="logo-icon">EX</span>Exchange</span>
-              <span class="logo-pill"><span class="logo-icon">SP</span>SharePoint</span>
-            </div>
-          </article>
-
-          <article class="stack-card">
-            <h3>Systems / Operations</h3>
-            <div class="logo-grid">
-              <span class="logo-pill"><span class="logo-icon">AD</span>Active Directory</span>
-              <span class="logo-pill"><span class="logo-icon">IN</span>Intune</span>
-              <span class="logo-pill"><span class="logo-icon">SSO</span>Single Sign-On</span>
-              <span class="logo-pill"><span class="logo-icon">AT</span>Atera RMM</span>
-              <span class="logo-pill"><span class="logo-icon">PDQ</span>PDQ</span>
-            </div>
-          </article>
-
-          <article class="stack-card">
-            <h3>Automation / Development</h3>
-            <div class="logo-grid">
-              <span class="logo-pill"><span class="logo-icon">PA</span>Power Automate</span>
-              <span class="logo-pill"><span class="logo-icon">PS</span>PowerShell</span>
-              <span class="logo-pill"><span class="logo-icon">JS</span>JavaScript</span>
-              <span class="logo-pill"><span class="logo-icon">WP</span>WordPress</span>
-              <span class="logo-pill"><span class="logo-icon">GH</span>GitHub</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="skills" class="section card reveal">
-        <h2 class="section-title">Core Competencies</h2>
-        <div class="skill-groups">
-          <article class="skill-group">
-            <h3>Leadership & Strategy</h3>
-            <div class="chips">
-              <span class="chip">IT Budget Management</span>
-              <span class="chip">Team Leadership</span>
-              <span class="chip">Project Management</span>
-              <span class="chip">Process Improvement</span>
-            </div>
-          </article>
-          <article class="skill-group">
-            <h3>Security & Compliance</h3>
-            <div class="chips">
-              <span class="chip">Incident Response</span>
-              <span class="chip">Security Auditing</span>
-              <span class="chip">NIST / COBIT</span>
-              <span class="chip">GDPR / HIPAA / PCI-DSS</span>
-            </div>
-          </article>
-          <article class="skill-group">
-            <h3>Cloud & Systems</h3>
-            <div class="chips">
-              <span class="chip">Cloud Migration</span>
-              <span class="chip">Azure Hybrid Join</span>
-              <span class="chip">Identity & Access</span>
-              <span class="chip">Endpoint Management</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="experience" class="section card reveal">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="timeline">
-          <article class="timeline-card">
-            <div class="timeline-head">
-              <h3>C.I.S.M</h3>
-              <p>All American Shutter &amp; Glass | Oct 2023 - Present</p>
-            </div>
-            <ul>
-              <li>Migrated operations from on-prem dependency to 100% cloud dependency.</li>
-              <li>Reduced asset loss by 82% with improved IT asset management design.</li>
-              <li>Implemented SSO, DLP, MDM, and RMM across business-critical systems.</li>
-              <li>Reduced security incidents by 49% through stronger controls and audits.</li>
-            </ul>
-          </article>
-
-          <article class="timeline-card">
-            <div class="timeline-head">
-              <h3>IT Manager</h3>
-              <p>Palm Beach Accountable Care Organization | Apr 2023 - Oct 2023</p>
-            </div>
-            <ul>
-              <li>Led cloud and Microsoft 365 transition from legacy on-prem workflows.</li>
-              <li>Reduced user setup time from days to minutes with Power Automate workflows.</li>
-              <li>Achieved a 40% budget decrease while maintaining operational stability.</li>
-              <li>Supervised project managers and infrastructure engineers.</li>
-            </ul>
-          </article>
-
-          <article class="timeline-card">
-            <div class="timeline-head">
-              <h3>Cybersecurity Analyst / Lead IT Support Specialist</h3>
-              <p>NationsBenefits | May 2022 - Apr 2023</p>
-            </div>
-            <ul>
-              <li>Executed incident response, compliance support, and endpoint security improvements.</li>
-              <li>Managed Active Directory, Azure AD, Intune, and Citrix environments.</li>
-              <li>Improved support workflows across ServiceNow and Zendesk.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="projects" class="section card reveal">
-        <h2 class="section-title">Projects / Achievements</h2>
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Enterprise Cloud Migration Program</h3>
-            <p>Transitioned business operations from on-prem systems to cloud-first Microsoft ecosystem.</p>
-            <p class="tagline">Outcome: improved reliability, security posture, and operational agility.</p>
-          </article>
-          <article class="project-card">
-            <h3>Identity & Access Modernization</h3>
-            <p>Implemented SSO and Azure Hybrid Join to unify authentication and strengthen access control.</p>
-            <p class="tagline">Outcome: cleaner user experience and reduced identity risk.</p>
-          </article>
-          <article class="project-card">
-            <h3>Security Policy & Auditing Program</h3>
-            <p>Established policy governance and auditing workflows using Microsoft security tooling.</p>
-            <p class="tagline">Outcome: 49% reduction in security incidents.</p>
-          </article>
-          <article class="project-card">
-            <h3>Onboarding Automation Initiative</h3>
-            <p>Automated onboarding/offboarding with SharePoint and Power Automate.</p>
-            <p class="tagline">Outcome: setup time reduced from days to minutes per user.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section grid-2">
-        <article id="education" class="card reveal">
-          <h2 class="section-title">Education</h2>
-          <div class="credential-grid">
-            <article class="credential credential--featured">
-              <p class="credential__label">Masters Degree</p>
-              <h3>Master of Science in Cyber Security Management</h3>
-              <p>Nova Southeastern University</p>
-              <p class="muted">2023 - 2024</p>
-            </article>
-            <article class="credential">
-              <p class="credential__label">Certificate</p>
-              <h3>Project Management</h3>
-              <p>Florida International University</p>
-              <p class="muted">2023</p>
-            </article>
-            <article class="credential">
-              <p class="credential__label">Bachelors Degree</p>
-              <h3>Information &amp; Communication Technology</h3>
-              <p>Vocational Training Development Institute</p>
-              <p class="muted">2020 - 2023</p>
-            </article>
-            <article class="credential">
-              <p class="credential__label">Associates Degree</p>
-              <h3>Information &amp; Communication Technology</h3>
-              <p>Vocational Training Development Institute</p>
-              <p class="muted">2010 - 2012</p>
-            </article>
           </div>
-        </article>
+        </section>
 
-        <article id="certifications" class="card reveal">
-          <h2 class="section-title">Certifications</h2>
-          <div class="badge-grid">
-            <article class="badge-card">
-              <p class="badge-card__title">CCNA Enterprise Networking, Security, and Automation</p>
-              <p class="badge-card__meta">Cisco | 2022</p>
-            </article>
-            <article class="badge-card">
-              <p class="badge-card__title">CCNA Switching, Routing, and Wireless Essentials</p>
-              <p class="badge-card__meta">Cisco | 2022</p>
-            </article>
-            <article class="badge-card">
-              <p class="badge-card__title">TestOut Security Pro</p>
-              <p class="badge-card__meta">TestOut | 2024</p>
-            </article>
+        <section id="services" class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Services</h2>
+              <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">Strategic Leadership, Technical Delivery</p>
+            </div>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-8 hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-xl font-bold mb-4">Security Program Development</h3>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Build and enforce practical controls across identity, endpoint, DLP, compliance, and incident response workflows.
+                </p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-8 hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-xl font-bold mb-4">Cloud & Microsoft Modernization</h3>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Migrate from legacy systems to secure, scalable Microsoft 365 and Azure-first infrastructure.
+                </p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-8 hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-xl font-bold mb-4">Operations & Automation</h3>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Automate onboarding, policy enforcement, and internal IT workflows to reduce cost while improving service quality.
+                </p>
+              </div>
+            </div>
           </div>
-        </article>
-      </section>
+        </section>
 
-      <section id="contact" class="section card reveal">
-        <h2 class="section-title">Contact</h2>
-        <p class="muted">Open to cybersecurity, infrastructure, and technology operations leadership opportunities.</p>
-        <div class="contact-grid">
-          <a class="contact-card" href="mailto:racardobrown@gmail.com">
-            <p class="contact-card__label">Email</p>
-            <p>racardobrown@gmail.com</p>
-          </a>
-          <a class="contact-card" href="tel:+15696975006">
-            <p class="contact-card__label">Phone</p>
-            <p>561.699.5006</p>
-          </a>
-          <a class="contact-card" href="https://www.linkedin.com/in/racardob/" target="_blank" rel="noreferrer">
-            <p class="contact-card__label">LinkedIn</p>
-            <p>linkedin.com/in/racardob</p>
-          </a>
-          <a class="contact-card" href="./assets/resume.pdf" download>
-            <p class="contact-card__label">Resume</p>
-            <p>Download PDF</p>
-          </a>
+        <div class="w-full overflow-hidden bg-slate-50 dark:bg-slate-950 py-10 border-y border-slate-100 dark:border-slate-800">
+          <div class="relative w-full overflow-hidden">
+            <div class="flex w-[200%] animate-scroll-tech">
+              <div class="w-1/2 flex justify-around text-slate-400 font-medium text-xl">
+                <span>Microsoft 365</span><span>Azure</span><span>Intune</span><span>SentinelOne</span><span>PowerShell</span><span>SharePoint</span><span>Zero Trust</span>
+              </div>
+              <div class="w-1/2 flex justify-around text-slate-400 font-medium text-xl">
+                <span>Microsoft 365</span><span>Azure</span><span>Intune</span><span>SentinelOne</span><span>PowerShell</span><span>SharePoint</span><span>Zero Trust</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
 
-      <footer class="footer">
-        <p>Racardo Brown - Cybersecurity &amp; Technology Professional</p>
+        <section id="experience" class="py-20 bg-slate-50 dark:bg-slate-950">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold mb-10">Experience Highlights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+                <p class="text-3xl font-extrabold text-blue-600">82%</p>
+                <p class="mt-2 text-slate-600 dark:text-slate-300">Asset loss reduction through improved IT asset management and governance.</p>
+              </div>
+              <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+                <p class="text-3xl font-extrabold text-blue-600">49%</p>
+                <p class="mt-2 text-slate-600 dark:text-slate-300">Security incident reduction with stronger controls, auditing, and policy enforcement.</p>
+              </div>
+              <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+                <p class="text-3xl font-extrabold text-blue-600">40%</p>
+                <p class="mt-2 text-slate-600 dark:text-slate-300">Budget reduction while maintaining stable operations and support performance.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-slate-900 text-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div>
+                <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-6">Let's build something secure and scalable.</h2>
+                <p class="text-slate-300 text-lg mb-8">
+                  Open to cybersecurity, infrastructure, and technology operations leadership opportunities.
+                </p>
+              </div>
+              <div class="space-y-4">
+                <a class="block rounded-lg border border-slate-700 p-5 hover:border-blue-500 transition-colors" href="mailto:racardobrown@gmail.com">
+                  <p class="text-slate-400 text-sm">Email</p>
+                  <p class="font-medium">racardobrown@gmail.com</p>
+                </a>
+                <a class="block rounded-lg border border-slate-700 p-5 hover:border-blue-500 transition-colors" href="tel:+15696975006">
+                  <p class="text-slate-400 text-sm">Phone</p>
+                  <p class="font-medium">561.699.5006</p>
+                </a>
+                <a
+                  class="block rounded-lg border border-slate-700 p-5 hover:border-blue-500 transition-colors"
+                  href="https://www.linkedin.com/in/racardob/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p class="text-slate-400 text-sm">LinkedIn</p>
+                  <p class="font-medium">linkedin.com/in/racardob</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+          <p class="text-center text-base text-slate-400">© <span id="year"></span> Racardo Brown. All rights reserved.</p>
+        </div>
       </footer>
-    </main>
+    </div>
 
-    <script src="./js/theme-toggle.js" defer></script>
-    <script src="./js/main.js" defer></script>
+    <script>
+      (function () {
+        const root = document.documentElement;
+        const themeToggle = document.getElementById("themeToggle");
+        const storageKey = "theme";
+
+        function applyTheme(theme) {
+          if (theme === "dark") {
+            root.classList.add("dark");
+            themeToggle.textContent = "Light mode";
+            themeToggle.setAttribute("aria-label", "Switch to light mode");
+          } else {
+            root.classList.remove("dark");
+            themeToggle.textContent = "Dark mode";
+            themeToggle.setAttribute("aria-label", "Switch to dark mode");
+          }
+        }
+
+        const storedTheme = localStorage.getItem(storageKey);
+        const initialTheme = storedTheme === "dark" ? "dark" : "light";
+        applyTheme(initialTheme);
+
+        themeToggle.addEventListener("click", function () {
+          const nextTheme = root.classList.contains("dark") ? "light" : "dark";
+          localStorage.setItem(storageKey, nextTheme);
+          applyTheme(nextTheme);
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+      })();
+    </script>
   </body>
 </html>
 
