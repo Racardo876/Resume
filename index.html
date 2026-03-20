@@ -1,360 +1,261 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Racardo Brown - Cyber Security and Technology Professional. Experience across Microsoft 365, Azure, Intune, and security operations."
+      content="Racardo Brown - Cybersecurity and Technology Professional. Executive-level leadership across Microsoft 365, Azure, security operations, and IT transformation."
     />
-    <title>Racardo Brown | Cybersecurity & Technology</title>
-
-    <meta property="og:title" content="Racardo Brown | Cybersecurity & Technology" />
-    <meta property="og:description" content="Security-focused technology leadership and hands-on systems administration." />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Racardo Brown | Cybersecurity & Technology Leader</title>
+    <script>
+      tailwind = { config: { darkMode: "class" } };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes scroll-tech {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-scroll-tech {
+        animation: scroll-tech 30s linear infinite;
+      }
+    </style>
   </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header">
-      <div class="container header-inner">
-        <div class="brand">
-          <div class="avatar" aria-hidden="true">
-            <img
-              src="./assets/headshot.jpg"
-              alt="Racardo Brown"
-              class="avatar__img"
-              onload="this.parentElement.classList.add('avatar--hasimg')"
-              onerror="this.parentElement.classList.add('avatar--noimg')"
-            />
-            <div class="avatar__fallback">RB</div>
-          </div>
-          <div class="brand-text">
-            <h1 class="name">Racardo Brown</h1>
-            <p class="headline">Cybersecurity & Technology Professional</p>
-          </div>
-        </div>
-
-        <nav class="nav-links" aria-label="Resume sections">
-          <a href="#summary">Summary</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#certifications">Certifications</a>
-        </nav>
-
-        <div class="header-actions">
-          <a class="btn primary btn--small" href="./assets/resume.pdf" download aria-label="Download resume PDF">
-            Download PDF
-          </a>
-          <button class="btn ghost theme-toggle btn--small" type="button" id="themeToggle" aria-label="Toggle dark/light theme">
-            <span class="theme-toggle__label">Theme</span>
-            <span class="theme-toggle__icon" aria-hidden="true">◐</span>
-          </button>
-        </div>
+  <body class="bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+    <div class="hidden lg:flex fixed left-12 bottom-0 z-40 flex-col items-center gap-6">
+      <div class="flex flex-col gap-6">
+        <a
+          href="mailto:racardobrown@gmail.com"
+          class="text-slate-400 hover:text-blue-600 hover:-translate-y-1 transition-all duration-300"
+          aria-label="Email"
+        >
+          <span class="text-lg">@</span>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/racardob/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 hover:text-blue-600 hover:-translate-y-1 transition-all duration-300"
+          aria-label="LinkedIn"
+        >
+          <span class="text-lg">in</span>
+        </a>
       </div>
-    </header>
+      <div class="w-px h-24 bg-slate-300 dark:bg-slate-700 mt-2"></div>
+    </div>
 
-    <main id="main" class="container">
-      <section class="hero card" aria-labelledby="heroTitle">
-        <div class="hero__grid">
-          <div class="hero__content">
-            <h2 id="heroTitle" class="hero__title">
-              Building secure Microsoft 365 and Azure environments with a zero-trust mindset.
-            </h2>
-            <p class="hero__subtitle">
-              Hands-on IT administration and security operations, covering Hyper-V, Intune MDM, RMM, and incident-response support.
-            </p>
-
-            <div class="hero__badges" role="list" aria-label="Quick highlights">
-              <span class="chip" role="listitem">Microsoft 365</span>
-              <span class="chip" role="listitem">Azure</span>
-              <span class="chip" role="listitem">Intune (MDM)</span>
-              <span class="chip" role="listitem">Security & Compliance</span>
-              <span class="chip" role="listitem">Zero Trust</span>
-            </div>
-
-            <div class="hero__cta">
-              <a class="btn primary" href="./assets/resume.pdf" download aria-label="Download resume PDF">
-                Download PDF
-              </a>
-              <a
-                class="btn ghost"
-                href="https://www.linkedin.com/in/racardob/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open LinkedIn profile"
+    <div class="min-h-screen">
+      <nav class="fixed w-full z-50 transition-all duration-300 bg-slate-50/90 dark:bg-slate-950/90 backdrop-blur-md py-5 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center">
+              <span class="h-8 w-8 rounded-md bg-slate-900 text-white dark:bg-white dark:text-slate-900 inline-flex items-center justify-center font-bold"
+                >&lt;/&gt;</span
               >
-                LinkedIn
-              </a>
+              <span class="ml-2 text-xl font-bold tracking-tight">Racardo <span class="text-blue-600">Brown</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+              <a href="#services" class="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors">Services</a>
+              <a href="#experience" class="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors">Experience</a>
+              <a href="#contact" class="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors">Contact</a>
+              <button
+                id="themeToggle"
+                class="border border-slate-300 dark:border-slate-700 px-3 py-1.5 rounded-md text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                type="button"
+                aria-label="Switch to dark mode"
+              >
+                Dark mode
+              </button>
             </div>
           </div>
         </div>
-      </section>
+      </nav>
 
-      <section class="card contact hero-contact card--compact" aria-labelledby="contactHeading">
-        <h2 id="contactHeading" class="sr-only">Contact</h2>
-        <ul class="contact-list">
-          <li>
-            <strong>Phone:</strong>
-            <a href="tel:+15696975006">561.699.5006</a>
-          </li>
-          <li>
-            <strong>Email:</strong>
-            <a href="mailto:racardobrown@gmail.com">racardobrown@gmail.com</a>
-          </li>
-          <li>
-            <strong>LinkedIn:</strong>
-            <a href="https://www.linkedin.com/in/racardob/" target="_blank" rel="noreferrer">linkedin.com/in/racardob/</a>
-          </li>
-          <li>
-            <strong>Location:</strong>
-            <span>Delray Beach, Florida, 33484</span>
-          </li>
-        </ul>
-      </section>
-
-      <section class="grid">
-        <article class="card" aria-labelledby="summary">
-          <h2 id="summary" class="section-title">Professional Summary</h2>
-          <p>
-            Demonstrated capacity to seamlessly blend visionary thinking, creative problem-solving, and robust business insight with honed technological expertise,
-            exemplary leadership, and project management competencies.
-          </p>
-          <p class="muted">
-            Areas of Expertise Encompass Microsoft products, security operations, and networking administration - built for secure, scalable environments.
-          </p>
-        </article>
-
-        <article class="card" aria-labelledby="skills">
-          <h2 id="skills" class="section-title">Areas of Expertise</h2>
-          <div class="chip-grid" role="list" aria-label="Core expertise">
-            <div class="chip" role="listitem">Microsoft 365</div>
-            <div class="chip" role="listitem">Azure</div>
-            <div class="chip" role="listitem">SharePoint</div>
-            <div class="chip" role="listitem">Intune (MDM)</div>
-            <div class="chip" role="listitem">Power Automate</div>
-            <div class="chip" role="listitem">Exchange</div>
-            <div class="chip" role="listitem">Teams</div>
-
-            <div class="chip" role="listitem">Sentinel One</div>
-            <div class="chip" role="listitem">Arctic Wolf</div>
-            <div class="chip" role="listitem">Atera RMM</div>
-            <div class="chip" role="listitem">PDQ</div>
-            <div class="chip" role="listitem">AD Audit Plus</div>
-            <div class="chip" role="listitem">Microsoft Security &amp; Compliance</div>
-
-            <div class="chip" role="listitem">Meraki</div>
-            <div class="chip" role="listitem">UniFi</div>
-            <div class="chip" role="listitem">Active Directory</div>
-            <div class="chip" role="listitem">Zero Trust</div>
-            <div class="chip" role="listitem">Print Servers</div>
-            <div class="chip" role="listitem">Project Management</div>
-            <div class="chip" role="listitem">PowerShell</div>
+      <main>
+        <section id="home" class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+              <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-7 lg:text-left">
+                <div class="inline-flex items-center px-3 py-1 rounded-full border border-blue-100 bg-blue-50 text-blue-600 text-sm font-medium mb-6 dark:border-blue-900 dark:bg-blue-950 dark:text-blue-300">
+                  <span class="flex h-2 w-2 rounded-full bg-blue-600 mr-2"></span>Open to leadership opportunities
+                </div>
+                <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+                  <span class="block">Secure Systems.</span><span class="block text-blue-600">Business-Ready Outcomes.</span>
+                </h1>
+                <p class="mt-6 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                  I help companies modernize infrastructure, harden security posture, and streamline operations across Microsoft 365, Azure, identity, and endpoint ecosystems.
+                </p>
+                <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="#contact"
+                      class="inline-flex items-center justify-center px-8 py-3 border border-slate-300 dark:border-slate-700 text-base font-medium rounded-md text-slate-700 dark:text-slate-100 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 md:text-lg transition-colors"
+                      >Contact Me</a
+                    >
+                  </div>
+                </div>
+                <div class="mt-8 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
+                  <div class="flex items-center">Cloud Transformation</div>
+                  <div class="flex items-center">Security Operations</div>
+                  <div class="flex items-center">IT Leadership</div>
+                </div>
+              </div>
+              <div class="mt-16 lg:mt-0 lg:col-span-5 relative">
+                <div class="relative mx-auto w-full rounded-lg shadow-lg max-w-md">
+                  <div class="relative block w-full bg-white dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700">
+                    <div class="w-full h-80 bg-gradient-to-br from-blue-600 via-indigo-600 to-slate-900"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                      <p class="font-bold text-xl">Racardo Brown</p>
+                      <p class="text-sm opacity-90">Cybersecurity & Technology Professional</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute -top-4 -right-4 h-24 w-24 bg-blue-100 dark:bg-blue-900 rounded-full -z-10 blur-2xl opacity-50"></div>
+                <div class="absolute -bottom-4 -left-4 h-32 w-32 bg-indigo-100 dark:bg-indigo-900 rounded-full -z-10 blur-2xl opacity-50"></div>
+              </div>
+            </div>
           </div>
-        </article>
-      </section>
+        </section>
 
-      <section class="card" aria-labelledby="experience">
-        <h2 id="experience" class="section-title">Professional Experience</h2>
+        <section id="services" class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Services</h2>
+              <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">Strategic Leadership, Technical Delivery</p>
+            </div>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-8 hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-xl font-bold mb-4">Security Program Development</h3>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Build and enforce practical controls across identity, endpoint, DLP, compliance, and incident response workflows.
+                </p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-8 hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-xl font-bold mb-4">Cloud & Microsoft Modernization</h3>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Migrate from legacy systems to secure, scalable Microsoft 365 and Azure-first infrastructure.
+                </p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-8 hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-xl font-bold mb-4">Operations & Automation</h3>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Automate onboarding, policy enforcement, and internal IT workflows to reduce cost while improving service quality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <div class="timeline">
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">C.I.S.M</h3>
-              <p class="role-meta">
-                All American Shutter &amp; Glass | Rivera Beach, FL (Hybrid)
-                <span class="dot">•</span>
-                October 2023 to Present
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Administered Hyper-V and implemented Microsoft 365 / SharePoint for secure operations.</li>
-              <li>Configured IT asset management to reduce asset loss by 82%.</li>
-              <li>Implemented DLP and MDM/RMM solutions using Verizon MDM, Intune, ABM, and Knox.</li>
-              <li>Managed IT budget with CFO oversight; optimized costs and resource allocation.</li>
-              <li>Deployed and configured Single Sign-On (SSO) for streamlined authentication.</li>
-              <li>Configured Azure Hybrid Join to integrate hybrid Azure AD environments.</li>
-              <li>Migrated from on-prem dependency to 100% cloud dependency.</li>
-              <li>Managed security policies using Microsoft 365 administrative tools.</li>
-              <li>Deployed Atera RMM for automated patch management.</li>
-              <li>Reduced security incidents by 49% through enforcement of data security and auditing policies.</li>
-            </ul>
-          </article>
-
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">IT Manager</h3>
-              <p class="role-meta">
-                Palm Beach Accountable Care Organization | Palm Beach County, FL (On-Site)
-                <span class="dot">•</span>
-                April 2023 to October 2023
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Administered Hyper-V, Azure, Microsoft 365, Exchange, and Intune.</li>
-              <li>Implemented and managed IT asset management; reduced asset loss from 60% to 37.3%.</li>
-              <li>Led complete migration from on-prem dependency to cloud / O365.</li>
-              <li>Streamlined onboarding/offboarding: reduced setup time from 3-4 days to 1-1.7 minutes per user using SharePoint and Power Automate.</li>
-              <li>Implemented DLP, MDM, and RMM solutions via Microsoft Intune.</li>
-              <li>Configured terminal server to reduce new client EMR onboarding time by 60%.</li>
-              <li>Achieved a 40% budget decrease through weekly savings initiatives.</li>
-              <li>Led project managers and infrastructure engineers in supervisory capacity.</li>
-            </ul>
-          </article>
-
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">Cybersecurity Analyst</h3>
-              <p class="role-meta">
-                NationsBenefits | Plantation, FL (On-Site)
-                <span class="dot">•</span>
-                December 2022 to April 2023
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Performed threat detection and incident response within security operations.</li>
-              <li>Supported compliance and auditing aligned to GDPR, HIPAA, PCI-DSS, NIST, and COBIT.</li>
-              <li>Utilized Sentinel One, Absolute, Arctic Wolf, ServiceNow, TMpros, and AD Audit Plus.</li>
-              <li>Applied a zero-trust approach to network security.</li>
-            </ul>
-          </article>
-
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">Lead IT Support Specialist</h3>
-              <p class="role-meta">
-                NationsBenefits | Plantation, FL (On-Site)
-                <span class="dot">•</span>
-                May 2022 to December 2022
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Supported Microsoft 365 and Microsoft Server (2019) with Active Directory administration.</li>
-              <li>Managed Azure AD and Intune (including endpoint and device policies).</li>
-              <li>Administered Citrix VDI and Workspace environments.</li>
-              <li>Managed printer and file server operations.</li>
-              <li>Provided remote support using TMpros.</li>
-              <li>Administered asset management via ServiceNow.</li>
-              <li>Handled ticketing workflows in Zendesk and ServiceNow.</li>
-            </ul>
-          </article>
-
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">Fiber Optic Technician</h3>
-              <p class="role-meta">
-                AT&amp;T | Delray Beach, FL (On-Site)
-                <span class="dot">•</span>
-                December 2020 to May 2022
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Installed, repaired, and maintained fiber optic systems for optimal functionality.</li>
-              <li>Installed network cabling using crimpers and strippers.</li>
-              <li>Installed telephone systems including voicemail and intercom systems.</li>
-              <li>Worked with networking protocols including IPv4, IPv6, and TCP/UDP.</li>
-              <li>Performed fiber optic techniques including mechanical splicing, fusion splicing, fiber scoping, and fiber provisioning.</li>
-            </ul>
-          </article>
-
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">Jr. Developer</h3>
-              <p class="role-meta">
-                Xr studios / ByllKreate | Kingston, Jamaica (Remote)
-                <span class="dot">•</span>
-                November 2017 to December 2021
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Created animated banner advertisements using CSS, HTML, and JavaScript with GreenSock.</li>
-              <li>Developed WordPress websites and custom plugins / API development.</li>
-              <li>Performed graphic design using Adobe Photoshop and Illustrator.</li>
-              <li>Designed databases and web applications with SQL and Oracle.</li>
-              <li>Optimized websites for SEO and social media performance.</li>
-              <li>Used GitHub for version control.</li>
-            </ul>
-          </article>
-
-          <article class="role">
-            <header class="role-header">
-              <h3 class="role-title">Technical Support Manager</h3>
-              <p class="role-meta">
-                ACCENT Marketing | Kingston, Jamaica (On-Site)
-                <span class="dot">•</span>
-                August 2013 to October 2017
-              </p>
-            </header>
-            <ul class="bullet-list">
-              <li>Led a technical support team of 12, promoting collaboration and motivation.</li>
-              <li>Managed and tracked support tickets to ensure timely resolution.</li>
-              <li>Analyzed KPI metrics to identify improvement opportunities.</li>
-              <li>Developed and maintained knowledge bases and support documentation.</li>
-              <li>Served as an escalation point for complex technical issues.</li>
-              <li>Implemented customer feedback mechanisms to improve service quality.</li>
-              <li>Conducted regular team meetings to strengthen coordination and performance.</li>
-            </ul>
-          </article>
+        <div class="w-full overflow-hidden bg-slate-50 dark:bg-slate-950 py-10 border-y border-slate-100 dark:border-slate-800">
+          <div class="relative w-full overflow-hidden">
+            <div class="flex w-[200%] animate-scroll-tech">
+              <div class="w-1/2 flex justify-around text-slate-400 font-medium text-xl">
+                <span>Microsoft 365</span><span>Azure</span><span>Intune</span><span>SentinelOne</span><span>PowerShell</span><span>SharePoint</span><span>Zero Trust</span>
+              </div>
+              <div class="w-1/2 flex justify-around text-slate-400 font-medium text-xl">
+                <span>Microsoft 365</span><span>Azure</span><span>Intune</span><span>SentinelOne</span><span>PowerShell</span><span>SharePoint</span><span>Zero Trust</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
 
-      <section class="grid">
-        <article class="card" aria-labelledby="education">
-          <h2 id="education" class="section-title">Education</h2>
-          <div class="list-block">
-            <div class="list-item">
-              <h3 class="list-item__title">Master of Science in Cyber Security Management</h3>
-              <p class="list-item__meta">Nova Southeastern University | Fort Lauderdale, FL</p>
-              <p class="list-item__years">August 2023 to August 2024</p>
-            </div>
-            <div class="list-item">
-              <h3 class="list-item__title">Certificate in Project Management</h3>
-              <p class="list-item__meta">Florida International University | Fort Lauderdale, FL</p>
-              <p class="list-item__years">January 2023 to April 2023</p>
-            </div>
-            <div class="list-item">
-              <h3 class="list-item__title">Bachelor of Science in Information &amp; Communication Technology</h3>
-              <p class="list-item__meta">Vocational Training Development Institute | Kingston</p>
-              <p class="list-item__years">August 2020 to January 2023</p>
-            </div>
-            <div class="list-item">
-              <h3 class="list-item__title">Associate of Science in Information and Communication Technology</h3>
-              <p class="list-item__meta">Vocational Training Development Institute | Kingston</p>
-              <p class="list-item__years">September 2010 to August 2012</p>
+        <section id="experience" class="py-20 bg-slate-50 dark:bg-slate-950">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold mb-10">Experience Highlights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+                <p class="text-3xl font-extrabold text-blue-600">82%</p>
+                <p class="mt-2 text-slate-600 dark:text-slate-300">Asset loss reduction through improved IT asset management and governance.</p>
+              </div>
+              <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+                <p class="text-3xl font-extrabold text-blue-600">49%</p>
+                <p class="mt-2 text-slate-600 dark:text-slate-300">Security incident reduction with stronger controls, auditing, and policy enforcement.</p>
+              </div>
+              <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+                <p class="text-3xl font-extrabold text-blue-600">40%</p>
+                <p class="mt-2 text-slate-600 dark:text-slate-300">Budget reduction while maintaining stable operations and support performance.</p>
+              </div>
             </div>
           </div>
-        </article>
+        </section>
 
-        <article class="card" aria-labelledby="certifications">
-          <h2 id="certifications" class="section-title">Certifications</h2>
-          <ul class="bullet-list">
-            <li>CCNA: Enterprise Networking, Security, and Automation (May 2022)</li>
-            <li>CCNA: Switching, Routing, and Wireless Essentials (January 2022)</li>
-            <li>TestOut Security Pro (February 2024)</li>
-          </ul>
-          <p class="muted" style="margin-top: 0.75rem;">
-            Note: "CISM" appears in your role title; if it should be listed as a certification instead, tell me and I will move it accordingly.
-          </p>
-        </article>
-      </section>
+        <section id="contact" class="py-20 bg-slate-900 text-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div>
+                <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-6">Let's build something secure and scalable.</h2>
+                <p class="text-slate-300 text-lg mb-8">
+                  Open to cybersecurity, infrastructure, and technology operations leadership opportunities.
+                </p>
+              </div>
+              <div class="space-y-4">
+                <a class="block rounded-lg border border-slate-700 p-5 hover:border-blue-500 transition-colors" href="mailto:racardobrown@gmail.com">
+                  <p class="text-slate-400 text-sm">Email</p>
+                  <p class="font-medium">racardobrown@gmail.com</p>
+                </a>
+                <a class="block rounded-lg border border-slate-700 p-5 hover:border-blue-500 transition-colors" href="tel:+15696975006">
+                  <p class="text-slate-400 text-sm">Phone</p>
+                  <p class="font-medium">561.699.5006</p>
+                </a>
+                <a
+                  class="block rounded-lg border border-slate-700 p-5 hover:border-blue-500 transition-colors"
+                  href="https://www.linkedin.com/in/racardob/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p class="text-slate-400 text-sm">LinkedIn</p>
+                  <p class="font-medium">linkedin.com/in/racardob</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
-      <section class="card print-footer" aria-labelledby="about">
-        <h2 id="about" class="section-title">Availability</h2>
-        <p class="muted">
-          Open to security and systems leadership roles. Lets connect and build resilient environments.
-        </p>
-      </section>
-    </main>
+      <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+          <p class="text-center text-base text-slate-400">© <span id="year"></span> Racardo Brown. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
 
-    <script src="./js/theme-toggle.js" defer></script>
+    <script>
+      (function () {
+        const root = document.documentElement;
+        const themeToggle = document.getElementById("themeToggle");
+        const storageKey = "theme";
+
+        function applyTheme(theme) {
+          if (theme === "dark") {
+            root.classList.add("dark");
+            themeToggle.textContent = "Light mode";
+            themeToggle.setAttribute("aria-label", "Switch to light mode");
+          } else {
+            root.classList.remove("dark");
+            themeToggle.textContent = "Dark mode";
+            themeToggle.setAttribute("aria-label", "Switch to dark mode");
+          }
+        }
+
+        const storedTheme = localStorage.getItem(storageKey);
+        const initialTheme = storedTheme === "dark" ? "dark" : "light";
+        applyTheme(initialTheme);
+
+        themeToggle.addEventListener("click", function () {
+          const nextTheme = root.classList.contains("dark") ? "light" : "dark";
+          localStorage.setItem(storageKey, nextTheme);
+          applyTheme(nextTheme);
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+      })();
+    </script>
   </body>
 </html>
 

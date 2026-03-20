@@ -3,10 +3,11 @@
 This folder contains a single-page, modern resume website:
 
 - `index.html` — main resume page
-- `styles.css` — modern/clean styling + print-friendly rules
+- `styles.css` — premium visual styling + responsive layout
 - `js/theme-toggle.js` — light/dark theme toggle (saved in `localStorage`)
+- `js/main.js` — scroll reveal animations + sticky nav active section highlighting
 - `assets/resume.pdf` — the PDF used by the **Download PDF** link
-- `assets/headshot.jpg` — optional profile photo (fallbacks to initials if missing)
+- `assets/headshot.png` — profile photo displayed in the hero section
 
 ## Deploy to GitHub Pages
 
