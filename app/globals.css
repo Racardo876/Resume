@@ -416,6 +416,207 @@ body {
   outline: none;
 }
 
+.mcard-contact-fullbleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.mcard-contact-shell {
+  display: grid;
+  gap: 38px;
+  border-top: 1px solid #1d325d;
+  padding: 34px clamp(20px, 5vw, 64px) 30px;
+  background: radial-gradient(circle at top left, #0f274f 0%, #081937 45%, #06152f 100%);
+}
+
+.mcard-contact-copy,
+.mcard-contact-booking {
+  color: #dbeafe;
+}
+
+.mcard-contact-copy {
+  max-width: 520px;
+}
+
+.mcard-contact-title {
+  color: #f8fafc;
+  font-size: clamp(2rem, 3.3vw, 3rem);
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.mcard-contact-subtitle {
+  margin-top: 14px;
+  max-width: 46ch;
+  color: #9fb3d9;
+  font-size: 1.1rem;
+}
+
+.mcard-contact-form {
+  margin-top: 26px;
+  max-width: 470px;
+  border: 1px solid #27406f;
+  background: rgba(11, 30, 62, 0.72);
+  padding: 18px;
+}
+
+.mcard-contact-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #d9e7ff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.mcard-contact-field {
+  position: relative;
+}
+
+.mcard-contact-field-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  color: #6f86af;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.mcard-contact-field-icon-top {
+  top: 14px;
+  transform: none;
+}
+
+.mcard-contact-input,
+.mcard-contact-textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  border: 1px solid #294877;
+  border-radius: 8px;
+  background: #071834;
+  padding: 11px 12px 11px 40px;
+  color: #e5efff;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.mcard-contact-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.mcard-contact-input::placeholder,
+.mcard-contact-textarea::placeholder {
+  color: #6f86af;
+}
+
+.mcard-contact-input:focus,
+.mcard-contact-textarea:focus {
+  border-color: #4f83ff;
+  box-shadow: 0 0 0 3px rgba(79, 131, 255, 0.2);
+}
+
+.mcard-contact-submit {
+  width: 100%;
+  border: 1px solid #3067ea;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #3b79ff 0%, #2b5fe1 100%);
+  padding: 11px 14px;
+  color: #eff6ff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.mcard-contact-submit svg {
+  width: 14px;
+  height: 14px;
+}
+
+.mcard-contact-submit:hover {
+  filter: brightness(1.06);
+}
+
+.mcard-contact-booking-title {
+  color: #f8fafc;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.mcard-contact-booking-text {
+  margin-top: 8px;
+  color: #9fb3d9;
+  font-size: 1rem;
+}
+
+.mcard-contact-booking {
+  width: 100%;
+  max-width: none;
+}
+
+.mcard-calendly-wrap {
+  margin-top: 8px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  line-height: 0;
+}
+
+.mcard-calendly-inline {
+  display: block;
+  width: 100%;
+  min-width: 100% !important;
+  height: 640px !important;
+}
+
+.mcard-footer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #06152f;
+  color: #9fb3d9;
+  padding: 14px clamp(18px, 5vw, 56px) 24px;
+}
+
+.mcard-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.mcard-footer-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mcard-footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: #b4c6e7;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.mcard-footer-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.mcard-footer-icon:hover {
+  color: #f8fafc;
+  transform: translateY(-1px);
+}
+
 .mcard-reveal {
   opacity: 0;
   transform: translateY(34px);
@@ -433,6 +634,40 @@ body {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .mcard-contact-shell {
+    grid-template-columns: 0.92fr 1.08fr;
+    align-items: start;
+    column-gap: 40px;
+  }
+
+  .mcard-contact-booking {
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 767px) {
+  .mcard-contact-shell {
+    padding: 18px;
+    gap: 20px;
+  }
+
+  .mcard-contact-copy,
+  .mcard-contact-form {
+    max-width: none;
+  }
+
+  .mcard-calendly-inline {
+    min-width: 0 !important;
+    height: 620px !important;
+  }
+
+  .mcard-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

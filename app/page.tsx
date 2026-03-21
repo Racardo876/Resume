@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Script from "next/script";
 
 const infoItems = [
   ["Role", "Cybersecurity Program and IT Risk Manager"],
@@ -1244,32 +1245,74 @@ export default function Home() {
           </article>
         </section>
 
-        <section id="contact" className="mt-12 text-center mcard-reveal">
-          <h2 className="mcard-section-title">Contact Me</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <article className="mcard-panel text-left text-sm">
-              <div className="space-y-3 border-b border-slate-200 pb-4">
-                <p><span className="mcard-tag">Address:</span> Delray Beach, Florida</p>
-                <p><span className="mcard-tag">Phone:</span> 561.699.5006</p>
-                <p><span className="mcard-tag">E-mail:</span> racardobrown@gmail.com</p>
-              </div>
-              <div className="relative mt-4 h-48 overflow-hidden rounded-sm">
-                <Image src="/map-main.webp" alt="Map" fill className="object-cover" />
-              </div>
-            </article>
-            <article className="mcard-panel text-left">
-              <h3 className="text-3xl font-light text-slate-600">Write a message:</h3>
-              <form className="mt-6 space-y-4">
-                <input className="mcard-input" type="text" placeholder="Your Name" />
-                <input className="mcard-input" type="email" placeholder="Your Email" />
-                <input className="mcard-input" type="text" placeholder="Subject" />
-                <textarea className="mcard-input" rows={4} placeholder="Message" />
-                <button type="button" className="mcard-btn mcard-btn-primary">Send Message</button>
-              </form>
-            </article>
-          </div>
-        </section>
       </main>
+
+      <section id="contact" className="mt-12 mcard-reveal mcard-contact-fullbleed">
+        <div className="mcard-contact-shell">
+          <article className="mcard-contact-copy">
+            <h2 className="mcard-contact-title">Let&apos;s build something great.</h2>
+            <p className="mcard-contact-subtitle">
+              Ready to improve your site&apos;s performance or build your MVP? Fill out the form or book a call directly on my calendar.
+            </p>
+
+            <form className="mcard-contact-form" onSubmit={(event) => event.preventDefault()}>
+              <label className="mcard-contact-label" htmlFor="contact-name">Name</label>
+              <div className="mcard-contact-field">
+                <span className="mcard-contact-field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                    <path d="M16 3h5v5" />
+                    <path d="M8 16l13-13" />
+                  </svg>
+                </span>
+                <input id="contact-name" className="mcard-contact-input" type="text" placeholder="John Doe" />
+              </div>
+
+              <label className="mcard-contact-label" htmlFor="contact-email">Email</label>
+              <div className="mcard-contact-field">
+                <span className="mcard-contact-field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 6h16v12H4z" />
+                    <path d="M4 8l8 6 8-6" />
+                  </svg>
+                </span>
+                <input id="contact-email" className="mcard-contact-input" type="email" placeholder="john@example.com" />
+              </div>
+
+              <label className="mcard-contact-label" htmlFor="contact-message">Message</label>
+              <div className="mcard-contact-field">
+                <span className="mcard-contact-field-icon mcard-contact-field-icon-top" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  </svg>
+                </span>
+                <textarea id="contact-message" className="mcard-contact-textarea" rows={4} placeholder="Tell me about your project..." />
+              </div>
+
+              <button type="submit" className="mcard-contact-submit">
+                Send Message
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M22 2L11 13" />
+                  <path d="M22 2L15 22l-4-9-9-4z" />
+                </svg>
+              </button>
+            </form>
+          </article>
+
+          <article className="mcard-contact-booking">
+            <h3 className="mcard-contact-booking-title">Book a Consultation</h3>
+            <p className="mcard-contact-booking-text">Directly schedule a 30-min discovery call.</p>
+            <div className="mcard-calendly-wrap">
+                <div
+                  className="calendly-inline-widget mcard-calendly-inline"
+                  data-url="https://calendly.com/racardobrown/30min"
+                  style={{ minWidth: "100%", height: "540px" }}
+              />
+            </div>
+              <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
+          </article>
+        </div>
+      </section>
 
       {selectedEducation ? (
         <div className="mcard-modal-overlay" onClick={() => setSelectedEducation(null)} role="dialog" aria-modal="true" aria-label="Education details">
@@ -1370,8 +1413,33 @@ export default function Home() {
         </div>
       ) : null}
 
-      <footer className="pb-10 text-center text-sm text-slate-500">
-        © {new Date().getFullYear()} mCard style rebuild by Racardo Brown.
+      <footer className="mcard-footer pb-10 text-sm">
+        <div className="mcard-footer-inner">
+          <p>© {new Date().getFullYear()} Racardo Brown. All rights reserved.</p>
+          <div className="mcard-footer-icons">
+            <a href="mailto:racardobrown@gmail.com" className="mcard-footer-icon" aria-label="Send email to Racardo Brown">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 6h16v12H4z" />
+                <path d="M4 8l8 6 8-6" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/racb876" target="_blank" rel="noopener noreferrer" className="mcard-footer-icon" aria-label="Racardo Brown on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-12h4v2a4 4 0 0 1 2-2z" />
+                <rect x="2" y="9" width="4" height="11" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="/rb-resume.pdf" download className="mcard-footer-icon" aria-label="Download resume PDF">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <path d="M14 2v6h6" />
+                <path d="M12 18v-6" />
+                <path d="M9 15l3 3 3-3" />
+              </svg>
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
