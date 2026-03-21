@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Script from "next/script";
 
@@ -909,6 +909,18 @@ const testimonials = [
   },
 ];
 
+const quickLinks = [
+  { id: "home", href: "#home", label: "Home" },
+  { id: "about", href: "#about", label: "About" },
+  { id: "skills", href: "#skills", label: "Skills" },
+  { id: "experience", href: "#experience", label: "Experience" },
+  { id: "services", href: "#services", label: "Services" },
+  { id: "education", href: "#education", label: "Education" },
+  { id: "portfolio", href: "#portfolio", label: "Portfolio" },
+  { id: "clients", href: "#clients", label: "Clients" },
+  { id: "contact", href: "#contact", label: "Contact" },
+] as const;
+
 function ServiceIcon({ icon }: { icon: ServiceItem["icon"] }) {
   switch (icon) {
     case "shield":
@@ -979,6 +991,9 @@ export default function Home() {
   const [selectedExperience, setSelectedExperience] = useState<ExperienceItem | null>(null);
   const [selectedEducation, setSelectedEducation] = useState<EducationItem | null>(null);
   const [isPreviewExpanded, setIsPreviewExpanded] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<(typeof quickLinks)[number]["id"]>("home");
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>(".mcard-reveal");
@@ -1022,11 +1037,94 @@ export default function Home() {
     if (selectedEducation) setIsPreviewExpanded(false);
   }, [selectedEducation]);
 
+  useEffect(() => {
+    const sectionElements = quickLinks
+      .map((link) => document.getElementById(link.id))
+      .filter((element): element is HTMLElement => Boolean(element));
+    if (!sectionElements.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (!visible.length) return;
+        const currentId = visible[0].target.id as (typeof quickLinks)[number]["id"];
+        setActiveSection(currentId);
+      },
+      { rootMargin: "-40% 0px -52% 0px", threshold: [0.15, 0.35, 0.6] }
+    );
+
+    sectionElements.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+    const onPointerDown = (event: PointerEvent) => {
+      const target = event.target as Element | null;
+      if (target?.classList.contains("mcard-menu-backdrop")) {
+        setIsMenuOpen(false);
+        return;
+      }
+      if (!menuRef.current?.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [isMenuOpen]);
+
   const currentTestimonial = testimonials[activeTestimonial];
 
   return (
     <div className="mcard-shell min-h-screen text-slate-900">
-      <button className="mcard-menu-btn" aria-label="menu">≡</button>
+      <div className="mcard-menu-wrap" ref={menuRef}>
+        <button
+          className="mcard-menu-btn"
+          aria-label="Toggle quick navigation menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="quick-nav-menu"
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+        >
+          <span className="mcard-menu-icon" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+        </button>
+        {isMenuOpen ? <div className="mcard-menu-backdrop" aria-hidden="true" /> : null}
+        {isMenuOpen ? (
+          <nav id="quick-nav-menu" className="mcard-menu-panel" aria-label="Quick section navigation">
+            <p className="mcard-menu-title">Quick Navigation</p>
+            <ul>
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className={activeSection === link.id ? "is-active" : ""}
+                    aria-current={activeSection === link.id ? "page" : undefined}
+                    onClick={() => {
+                      setActiveSection(link.id);
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    <span className="mcard-menu-dot" aria-hidden="true" />
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ) : null}
+      </div>
 
       <header className="mcard-hero" id="home">
         <div className="mcard-hero-overlay" />
@@ -1221,7 +1319,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-12 text-center mcard-reveal">
+        <section id="clients" className="mt-12 text-center mcard-reveal">
           <h2 className="mcard-section-title">Clients</h2>
           <article className="mcard-panel mt-8">
             <div key={activeTestimonial} className="mcard-testimonial-slide">
