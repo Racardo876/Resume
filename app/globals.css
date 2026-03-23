@@ -211,22 +211,55 @@ body {
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
 }
 
-.mcard-intro-badges {
+.mcard-role-toggle-wrap {
   margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
 }
 
-.mcard-intro-badges span {
+.mcard-role-toggle-title {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.mcard-role-toggle {
+  margin: 8px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  width: min(760px, 100%);
+  overflow: hidden;
   border: 1px solid #d6deff;
   background: #eef2ff;
-  padding: 5px 10px;
   border-radius: 999px;
-  color: #3656c7;
+  padding: 3px;
+}
+
+.mcard-role-toggle button {
+  border: none;
+  background: transparent;
+  flex: 1;
+  min-width: 170px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  color: #64748b;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mcard-role-toggle button:hover {
+  color: #3656c7;
+}
+
+.mcard-role-toggle button.is-active {
+  background: #315df5;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(49, 93, 245, 0.28);
 }
 
 .mcard-social {
@@ -438,6 +471,16 @@ body {
     bottom: 4px;
     height: 36px;
     width: 36px;
+  }
+
+  .mcard-role-toggle {
+    justify-content: flex-start;
+    overflow-x: auto;
+    border-radius: 10px;
+  }
+
+  .mcard-role-toggle button {
+    min-width: 180px;
   }
 
   .mcard-scroll-wrap {

@@ -5,26 +5,11 @@ import Image from "next/image";
 import Script from "next/script";
 
 const infoItems = [
-  ["Role", "Cybersecurity Program and IT Risk Manager"],
   ["Citizenship", "United States"],
   ["Address", "Delray Beach, Florida"],
   ["Phone", "561.699.5006"],
   ["E-mail", "racardobrown@gmail.com"],
   ["LinkedIn", "linkedin.com/in/racb876"],
-];
-
-const skillProfessional = [
-  ["IAM (MFA, SSO, RBAC)", 95],
-  ["Cloud Security (Azure, Microsoft 365)", 92],
-  ["ERP Security (NetSuite)", 90],
-  ["Vulnerability Management", 89],
-];
-
-const skillPersonal = [
-  ["Cyberlaw", 90],
-  ["HubSpot", 88],
-  ["Process Automation", 92],
-  ["Security Program Leadership", 94],
 ];
 
 type ExperienceItem = {
@@ -921,6 +906,90 @@ const quickLinks = [
   { id: "contact", href: "#contact", label: "Contact" },
 ] as const;
 
+const introRoleToggles = [
+  {
+    id: "cyber-security",
+    label: "Cyber Security",
+  },
+  {
+    id: "web-development",
+    label: "Web Development",
+  },
+  {
+    id: "infrastructure-engineer",
+    label: "Infrastructure Engineer",
+  },
+] as const;
+
+const resumeProfiles = {
+  "cyber-security": {
+    role: "Cybersecurity Program & IT Risk Manager",
+    heroBlurb: "Cybersecurity Program & IT Risk Manager | IAM, Cloud Security, GRC",
+    professionalSkills: [
+      ["IAM (MFA, SSO, RBAC)", 95],
+      ["Cloud Security (Azure, Microsoft 365)", 93],
+      ["Vulnerability Management", 91],
+      ["Security Governance & GRC", 92],
+    ],
+    personalSkills: [
+      ["Risk Communication", 95],
+      ["Security Leadership", 94],
+      ["Cross-Functional Collaboration", 92],
+      ["Incident Decision-Making", 91],
+    ],
+    skillAlignment:
+      "I pair deep security control design with leadership and communication so risk-reduction initiatives actually get adopted across the business.",
+    aboutPrimary:
+      "I lead practical cybersecurity programs that align governance, risk, and technical controls to business outcomes. My work spans enterprise IAM, cloud security hardening, and operational security maturity.",
+    aboutSecondary:
+      "From policy and controls to implementation and reporting, I help organizations reduce risk while keeping delivery speed and operational reliability high.",
+  },
+  "web-development": {
+    role: "Web Development Engineer",
+    heroBlurb: "Web Development Engineer | Next.js, React, UX-focused product delivery",
+    professionalSkills: [
+      ["React / Next.js Application Development", 95],
+      ["UI Engineering & Responsive Design", 94],
+      ["API Integration & Data Flows", 91],
+      ["Front-End Performance Optimization", 90],
+    ],
+    personalSkills: [
+      ["Client Communication", 94],
+      ["Product Thinking", 92],
+      ["Team Collaboration", 93],
+      ["Creative Problem Solving", 95],
+    ],
+    skillAlignment:
+      "I combine modern front-end engineering with product thinking and client communication, turning requirements into polished, user-centered experiences.",
+    aboutPrimary:
+      "I build responsive, production-ready web experiences using modern front-end frameworks and component-driven architecture. I focus on usability, clarity, and maintainable code that scales.",
+    aboutSecondary:
+      "My delivery style centers on fast iteration, polished UI implementation, and reliable integration with APIs, forms, and business workflows.",
+  },
+  "infrastructure-engineer": {
+    role: "Infrastructure Engineer",
+    heroBlurb: "Infrastructure Engineer | Cloud Platforms, Identity, Automation, Reliability",
+    professionalSkills: [
+      ["Cloud Infrastructure Operations", 93],
+      ["Identity & Access Controls (IAM/RBAC)", 92],
+      ["Infrastructure Automation", 90],
+      ["Monitoring & Service Reliability", 94],
+    ],
+    personalSkills: [
+      ["Operational Leadership", 93],
+      ["Critical Incident Communication", 92],
+      ["Cross-Team Coordination", 91],
+      ["Structured Problem Solving", 95],
+    ],
+    skillAlignment:
+      "I link resilient infrastructure engineering with clear operational leadership, ensuring platform reliability and stakeholder confidence during change and incident response.",
+    aboutPrimary:
+      "I design and improve infrastructure foundations across cloud platforms, identity systems, and core operational tooling. My focus is resilient architecture, secure access, and dependable service operations.",
+    aboutSecondary:
+      "I bridge infrastructure and business execution by implementing automation, standardization, and performance visibility that supports long-term scalability.",
+  },
+} as const;
+
 function ServiceIcon({ icon }: { icon: ServiceItem["icon"] }) {
   switch (icon) {
     case "shield":
@@ -992,6 +1061,7 @@ export default function Home() {
   const [selectedEducation, setSelectedEducation] = useState<EducationItem | null>(null);
   const [isPreviewExpanded, setIsPreviewExpanded] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeRoleToggle, setActiveRoleToggle] = useState<(typeof introRoleToggles)[number]["id"]>("cyber-security");
   const [activeSection, setActiveSection] = useState<(typeof quickLinks)[number]["id"]>("home");
   const menuRef = useRef<HTMLDivElement | null>(null);
 
@@ -1083,6 +1153,9 @@ export default function Home() {
   }, [isMenuOpen]);
 
   const currentTestimonial = testimonials[activeTestimonial];
+  const selectedIntroRole = resumeProfiles[activeRoleToggle];
+  const selectedProfessionalSkills = selectedIntroRole.professionalSkills;
+  const selectedPersonalSkills = selectedIntroRole.personalSkills;
 
   return (
     <div className="mcard-shell min-h-screen text-slate-900">
@@ -1142,12 +1215,24 @@ export default function Home() {
           </div>
           <h1 className="mt-4 text-[64px] leading-none font-light text-slate-700">Racardo Brown</h1>
           <p className="mx-auto mt-2 max-w-3xl text-lg text-slate-500">
-            Cybersecurity Program & IT Risk Manager | IAM, Cloud Security, GRC
+            {selectedIntroRole.heroBlurb}
           </p>
-          <div className="mcard-intro-badges">
-            <span>Delray Beach, FL</span>
-            <span>Enterprise Security & ERP</span>
-            <span>Open to Strategic Projects</span>
+          <div className="mcard-role-toggle-wrap">
+            <p className="mcard-role-toggle-title">Resume Type</p>
+            <div className="mcard-role-toggle" role="tablist" aria-label="Select resume type">
+              {introRoleToggles.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={activeRoleToggle === item.id}
+                  className={activeRoleToggle === item.id ? "is-active" : ""}
+                  onClick={() => setActiveRoleToggle(item.id)}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
           </div>
           <div className="mt-5 flex justify-center gap-3">
             <a className="mcard-social" href="https://www.linkedin.com/in/racb876" target="_blank" rel="noopener noreferrer">LI</a>
@@ -1160,6 +1245,10 @@ export default function Home() {
         <section id="about" className="mcard-panel mcard-about-panel mt-8 mcard-reveal">
           <div className="grid gap-5 md:grid-cols-2">
             <ul className="text-base">
+              <li className="mcard-info-row">
+                <span className="mcard-tag">Role:</span>
+                <span>{selectedIntroRole.role}</span>
+              </li>
               {infoItems.map(([k, v]) => (
                 <li key={k} className="mcard-info-row">
                   <span className="mcard-tag">{k}:</span>
@@ -1170,13 +1259,10 @@ export default function Home() {
             <div className="text-base text-slate-600">
               <p className="font-semibold text-slate-700">Hello! I&apos;m Racardo Brown</p>
               <p className="mt-3">
-                I drive infrastructure modernization and lead enterprise system and ERP deployments that align
-                technology with business operations. From architecture to implementation, I ensure organizations
-                operate on scalable, secure, and data-driven platforms.
+                {selectedIntroRole.aboutPrimary}
               </p>
               <p className="mt-3">
-                My focus spans cybersecurity, Microsoft ecosystems, and full-lifecycle technology delivery,
-                enabling leadership with the visibility and control needed to scale effectively.
+                {selectedIntroRole.aboutSecondary}
               </p>
               <div className="mt-5 flex gap-3">
                 <a href="/rb-resume.pdf" download className="mcard-btn mcard-btn-primary">Download CV</a>
@@ -1188,12 +1274,15 @@ export default function Home() {
 
         <section id="skills" className="mt-12 text-center mcard-reveal">
           <h2 className="mcard-section-title">Skills</h2>
+          <p className="mx-auto mt-3 max-w-4xl text-base text-slate-600">
+            {selectedIntroRole.skillAlignment}
+          </p>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <article className="mcard-panel text-left">
               <div className="mcard-icon-badge">⚙</div>
               <h3 className="mcard-subtitle mt-8">Professional</h3>
               <ul className="mt-5 space-y-3">
-                {skillProfessional.map(([name, level]) => (
+                {selectedProfessionalSkills.map(([name, level]) => (
                   <li key={String(name)}>
                     <div className="mb-1 text-base text-slate-700">{name}</div>
                     <div className="mcard-progress"><span style={{ width: `${level}%` }} /></div>
@@ -1205,7 +1294,7 @@ export default function Home() {
               <div className="mcard-icon-badge">👤</div>
               <h3 className="mcard-subtitle mt-8">Personal</h3>
               <ul className="mt-5 space-y-3">
-                {skillPersonal.map(([name, level]) => (
+                {selectedPersonalSkills.map(([name, level]) => (
                   <li key={String(name)}>
                     <div className="mb-1 text-base text-slate-700">{name}</div>
                     <div className="mcard-progress"><span style={{ width: `${level}%` }} /></div>
