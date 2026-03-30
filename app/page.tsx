@@ -67,6 +67,28 @@ const education = [
   ["2024", "TestOut", "Security Pro Certification"],
 ];
 
+const portfolioProjects = [
+  {
+    title: "YaadHelp",
+    url: "https://yaadhelp.com/",
+    tag: "Web app",
+    description:
+      "Marketplace to find trusted local service providers across Jamaica—plumbing, electrical, cleaning, landscaping, and more.",
+    image: "https://yaadhelp.com/og-logo.png",
+    imageAlt: "YaadHelp — Find trusted help across Jamaica",
+  },
+  {
+    title: "FieldMint",
+    url: "https://fieldmint.ai/",
+    tag: "Web app",
+    description:
+      "Field service management for teams: jobs, scheduling, crews, proposals, and billing—aligned with enterprise field operations.",
+    image:
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/LmU1BduCzdT8BMXYenEPu8TZziu2/social-images/social-1774632852425-82f210246_logo.webp",
+    imageAlt: "FieldMint field service dashboard",
+  },
+] as const;
+
 const testimonials = [
   {
     image: "/testimonial-ceo.png",
@@ -253,28 +275,37 @@ export default function Home() {
 
         <section id="portfolio" className="mt-14 text-center mcard-reveal">
           <h2 className="mcard-section-title">Portfolio</h2>
-          <div className="mx-auto mt-6 flex w-fit overflow-hidden rounded-sm border border-blue-700 text-xs">
-            <span className="bg-blue-600 px-4 py-2 text-white">All</span>
-            <span className="bg-blue-600 px-4 py-2 text-white/90">Mockups</span>
-            <span className="bg-blue-600 px-4 py-2 text-white/90">Graphics</span>
-            <span className="bg-blue-600 px-4 py-2 text-white/90">Icons</span>
-            <span className="bg-blue-600 px-4 py-2 text-white/90">UI Kits</span>
-          </div>
+          <p className="mx-auto mt-4 max-w-[640px] text-base text-slate-600">
+            Live web applications I built—open each project to explore the full experience.
+          </p>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <article className="mcard-panel overflow-hidden p-0 text-left">
-              <Image src="/work5.png" alt="Mapogo UI Kit" width={900} height={520} className="h-52 w-full object-cover" />
-              <div className="p-4">
-                <p className="text-xs text-slate-500">UI Kits</p>
-                <h3 className="font-semibold text-slate-700">Mapogo UI Kit</h3>
-              </div>
-            </article>
-            <article className="mcard-panel overflow-hidden p-0 text-left">
-              <Image src="/work6.png" alt="Chameleon UI Kit" width={900} height={520} className="h-52 w-full object-cover" />
-              <div className="p-4">
-                <p className="text-xs text-slate-500">UI Kits</p>
-                <h3 className="font-semibold text-slate-700">Chameleon UI Kit</h3>
-              </div>
-            </article>
+            {portfolioProjects.map((project) => (
+              <a
+                key={project.title}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mcard-panel group block overflow-hidden p-0 text-left transition-shadow hover:shadow-md"
+              >
+                <div className="relative h-52 w-full overflow-hidden bg-slate-100">
+                  <Image
+                    src={project.image}
+                    alt={project.imageAlt}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="text-xs text-slate-500">{project.tag}</p>
+                  <h3 className="font-semibold text-slate-700">{project.title}</h3>
+                  <p className="mt-2 text-sm text-slate-600">{project.description}</p>
+                  <span className="mt-3 inline-block text-sm font-medium text-blue-600 group-hover:underline">
+                    Visit site →
+                  </span>
+                </div>
+              </a>
+            ))}
           </div>
         </section>
 
