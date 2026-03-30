@@ -881,7 +881,7 @@ const portfolioProjects = [
   {
     title: "FieldMint",
     category: "Web App",
-    description: "Field operations dashboard for jobs, crews, scheduling, and billing within the CPM Pro Suite.",
+    description: "All in one Field Service Management Solution, built to help field service businesses streamline their operations.",
     href: "https://fieldmint.ai/",
     image: "/portfolio-fieldmint.png",
   },
