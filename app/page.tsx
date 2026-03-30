@@ -70,22 +70,17 @@ const education = [
 const portfolioProjects = [
   {
     title: "YaadHelp",
-    url: "https://yaadhelp.com/",
-    tag: "Web app",
-    description:
-      "Marketplace to find trusted local service providers across Jamaica—plumbing, electrical, cleaning, landscaping, and more.",
-    image: "https://yaadhelp.com/og-logo.png",
-    imageAlt: "YaadHelp — Find trusted help across Jamaica",
+    category: "Web App",
+    description: "Marketplace connecting verified local service providers with customers across Jamaica.",
+    href: "https://yaadhelp.com/",
+    image: "/portfolio-yaadhelp.png",
   },
   {
     title: "FieldMint",
-    url: "https://fieldmint.ai/",
-    tag: "Web app",
-    description:
-      "Field service management for teams: jobs, scheduling, crews, proposals, and billing—aligned with enterprise field operations.",
-    image:
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/LmU1BduCzdT8BMXYenEPu8TZziu2/social-images/social-1774632852425-82f210246_logo.webp",
-    imageAlt: "FieldMint field service dashboard",
+    category: "Web App",
+    description: "Field operations dashboard for jobs, crews, scheduling, and billing within the CPM Pro Suite.",
+    href: "https://fieldmint.ai/",
+    image: "/portfolio-fieldmint.png",
   },
 ] as const;
 
@@ -275,36 +270,34 @@ export default function Home() {
 
         <section id="portfolio" className="mt-14 text-center mcard-reveal">
           <h2 className="mcard-section-title">Portfolio</h2>
-          <p className="mx-auto mt-4 max-w-[640px] text-base text-slate-600">
-            Live web applications I built—open each project to explore the full experience.
-          </p>
+          <div className="mx-auto mt-6 flex w-fit overflow-hidden rounded-sm border border-blue-700 text-xs">
+            <span className="bg-blue-600 px-4 py-2 text-white">All</span>
+            <span className="bg-blue-600 px-4 py-2 text-white/90">Web Apps</span>
+          </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {portfolioProjects.map((project) => (
-              <a
-                key={project.title}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mcard-panel group block overflow-hidden p-0 text-left transition-shadow hover:shadow-md"
-              >
-                <div className="relative h-52 w-full overflow-hidden bg-slate-100">
+              <article key={project.title} className="mcard-panel overflow-hidden p-0 text-left transition-shadow hover:shadow-md">
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-inherit no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                >
                   <Image
                     src={project.image}
-                    alt={project.imageAlt}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    alt={`${project.title} preview`}
+                    width={900}
+                    height={520}
+                    className="h-52 w-full object-cover object-top"
                   />
-                </div>
-                <div className="p-4">
-                  <p className="text-xs text-slate-500">{project.tag}</p>
-                  <h3 className="font-semibold text-slate-700">{project.title}</h3>
-                  <p className="mt-2 text-sm text-slate-600">{project.description}</p>
-                  <span className="mt-3 inline-block text-sm font-medium text-blue-600 group-hover:underline">
-                    Visit site →
-                  </span>
-                </div>
-              </a>
+                  <div className="p-4">
+                    <p className="text-xs text-slate-500">{project.category}</p>
+                    <h3 className="font-semibold text-slate-700">{project.title}</h3>
+                    <p className="mt-2 text-sm text-slate-600">{project.description}</p>
+                    <span className="mt-3 inline-block text-sm font-medium text-blue-600">Visit site →</span>
+                  </div>
+                </a>
+              </article>
             ))}
           </div>
         </section>
@@ -330,6 +323,70 @@ export default function Home() {
                 />
               ))}
             </div>
+          </article>
+        </section>
+
+        <section className="mt-14 text-center mcard-reveal">
+          <h2 className="mcard-section-title">Pricing</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-4">
+            {[
+              ["Basic", "15", ["UI/UX Design", "Web Development", "IOS Application", "Android Application"]],
+              ["Start-Up", "29", ["UI/UX Design", "Web Development", "IOS Application", "Android Application"]],
+              ["Business", "49", ["UI/UX Design", "Web Development", "IOS Application", "Android Application"]],
+              ["Enterprise", "89", ["UI/UX Design", "Web Development", "IOS Application", "Android Application"]],
+            ].map(([name, rate, features], idx) => (
+              <article key={String(name)} className="mcard-panel p-4">
+                <div className="mcard-icon-badge">▭</div>
+                <h3 className="mt-8 text-lg font-light text-slate-700">{name}</h3>
+                <p className="mt-1 text-5xl font-semibold text-slate-800">
+                  <span className="mr-1 text-base align-top font-normal">$</span>
+                  {rate}
+                  <span className="ml-1 text-base align-middle font-normal">/hr</span>
+                </p>
+                <ul className="mt-5 space-y-2 text-sm text-slate-600">
+                  {(features as string[]).map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+                <button className={`mt-6 w-full py-2 text-sm ${idx === 2 ? "mcard-btn" : "mcard-btn mcard-btn-primary"}`}>Buy Now</button>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-14 text-center mcard-reveal">
+          <h2 className="mcard-section-title">Blog</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <article className="mcard-panel overflow-hidden p-0 text-left">
+              <Image src="/blog1.png" alt="Blog post 1" width={900} height={520} className="h-52 w-full object-cover" />
+              <div className="p-4">
+                <h3 className="font-semibold text-slate-700">Operational Automation Playbook</h3>
+                <p className="mt-2 text-sm text-slate-600">How to reduce manual process bottlenecks with secure workflow automation.</p>
+                <button className="mcard-btn mcard-btn-primary mt-4">Read more</button>
+              </div>
+            </article>
+            <article className="mcard-panel overflow-hidden p-0 text-left">
+              <Image src="/blog2.png" alt="Blog post 2" width={900} height={520} className="h-52 w-full object-cover" />
+              <div className="p-4">
+                <h3 className="font-semibold text-slate-700">Security Operations in Hybrid Teams</h3>
+                <p className="mt-2 text-sm text-slate-600">Practical controls for endpoint visibility, identity, and governance.</p>
+                <button className="mcard-btn mcard-btn-primary mt-4">Read more</button>
+              </div>
+            </article>
+          </div>
+          <button className="mcard-btn mcard-btn-primary mt-6">View Blog</button>
+        </section>
+
+        <section className="mt-14 text-center">
+          <h2 className="mcard-section-title">Text Section</h2>
+          <article className="mcard-panel mt-8 text-left text-sm text-slate-600">
+            <p>
+              I focus on practical transformation: modern cloud-first architecture, mature security processes,
+              and automation that improves execution across operations and leadership.
+            </p>
+            <p className="mt-3">
+              My goal is to align people, process, and technology for durable business outcomes.
+            </p>
           </article>
         </section>
 
