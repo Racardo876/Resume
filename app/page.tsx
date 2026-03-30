@@ -276,20 +276,22 @@ export default function Home() {
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {portfolioProjects.map((project) => (
-              <article key={project.title} className="mcard-panel overflow-hidden p-0 text-left transition-shadow hover:shadow-md">
+              <article key={project.title} className="mcard-panel overflow-hidden p-0 text-left transition-shadow duration-300 hover:shadow-lg">
                 <a
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-inherit no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                  className="group block text-inherit no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                 >
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} preview`}
-                    width={900}
-                    height={520}
-                    className="h-52 w-full object-cover object-top"
-                  />
+                  <div className="h-52 w-full overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} preview`}
+                      width={900}
+                      height={520}
+                      className="h-52 w-full object-cover object-top transition-transform duration-500 ease-out motion-safe:group-hover:scale-105"
+                    />
+                  </div>
                   <div className="p-4">
                     <p className="text-xs text-slate-500">{project.category}</p>
                     <h3 className="font-semibold text-slate-700">{project.title}</h3>
